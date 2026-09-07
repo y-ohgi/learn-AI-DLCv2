@@ -1,0 +1,10 @@
+{
+  "title": "AI-DLC v2 入門",
+  "description": "AI駆動開発の歴史から AI-DLC v2 のハンズオンまでを一気に学ぶ教材",
+  "author": "learn-AI-DLCv2",
+  "language": "ja",
+  "structure": {
+    "readme": "README.md",
+    "summary": "SUMMARY.md"
+  }
+}
