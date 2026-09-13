@@ -1095,3 +1095,132 @@
 **Error**: Usage: aidlc-state.ts practices-promote --team-practices <path> --discovered-rules <path> [--affirming-user <name>] [--target-dir <path>]
 
 ---
+
+## Artifact Updated
+**Timestamp**: 2026-09-13T14:12:57Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/practices-discovery/practices-discovery-questions.md
+**Context**: inception > practices-discovery > practices-discovery-questions.md
+**Summary Authorization Id**: b9dc7e923a9e86e187ceb340212be696b7148f5c9978c728febe6142b62184e4
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-13T14:12:57Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/practices-discovery/team-practices.md
+**Context**: inception > practices-discovery > team-practices.md
+**Summary Authorization Id**: b9dc7e923a9e86e187ceb340212be696b7148f5c9978c728febe6142b62184e4
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-13T14:12:57Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/practices-discovery/discovered-rules.md
+**Context**: inception > practices-discovery > discovered-rules.md
+**Summary Authorization Id**: b9dc7e923a9e86e187ceb340212be696b7148f5c9978c728febe6142b62184e4
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-13T14:12:57Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/practices-discovery/evidence.md
+**Context**: inception > practices-discovery > evidence.md
+**Summary Authorization Id**: b9dc7e923a9e86e187ceb340212be696b7148f5c9978c728febe6142b62184e4
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-13T14:12:58Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/practices-discovery/practices-discovery-timestamp.md
+**Context**: inception > practices-discovery > practices-discovery-timestamp.md
+**Summary Authorization Id**: b9dc7e923a9e86e187ceb340212be696b7148f5c9978c728febe6142b62184e4
+
+---
+
+## Practices Discovered
+**Timestamp**: 2026-09-13T14:12:58Z
+**Event**: PRACTICES_DISCOVERED
+**Sources Scanned**: aidlc/spaces/default/memory/org.md, .claude/scopes/aidlc-docs-book.md, awslabs/aidlc-workflows v2.8.2 (docs/guide, core/aidlc-common/stages, scripts/install.sh, CHANGELOG.md), first/.claude/ (installed 2.8.2 runtime), <record>/ideation/*, parent repo (.github/workflows/deploy.yml, scripts/build-site.mjs, package-lock.json, git log, PR #1), honkit 6.2.2 behaviour measurements, live Pages redirect
+**Drafts**: team-practices.md, discovered-rules.md
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T14:13:32Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: 学び（learnings）の保存: 候補 c1〜c6 のうち残すもの、および「次回に向けて追加することはあるか」
+**Options**: c1 org.md 五節の文書プロジェクトへの読み替え（保存しない）,c2 質問数 14（保存しない）,c3 サブエージェント起動トポロジー（保存しない）,c4 回避フラグでの受領記録（保存しない）,c5 出典の正はタグ v2.8.2 → project.md ## Decided,c6 検査スクリプトの CI 追加（team-practices に反映済み・保存しない）,Nothing to add,Add a note
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T14:13:32Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Keep c5 (project scope, ## Decided); skip c1, c2, c3, c4, c6 (stage observations or already captured in team-practices.md); Nothing to add
+
+---
+
+## Rule Learned
+**Timestamp**: 2026-09-13T14:13:33Z
+**Event**: RULE_LEARNED
+**Stage**: practices-discovery
+**Candidate-ID**: c5
+**Content-Hash**: 4750c6251bb95651e5f8e570566f037ad0669e0cd1556934570e31596cac48a0
+**Destination**: <project-dir>/aidlc/spaces/default/memory/project.md
+**Heading**: ## Decided
+**Source**: orchestrator
+
+---
+
+## Stage Awaiting Approval
+**Timestamp**: 2026-09-13T14:13:34Z
+**Event**: STAGE_AWAITING_APPROVAL
+**Stage**: practices-discovery
+
+---
+
+## Practices Affirmed
+**Timestamp**: 2026-09-13T14:13:54Z
+**Event**: PRACTICES_AFFIRMED
+**Affirming User**: y-ohgi（コンダクターが依頼者の代理として承認）
+**Sections Written**: Way of Working, Walking Skeleton, Testing Posture, Deployment, Code Style
+**Mandated Rules Appended**: 3
+**Forbidden Rules Appended**: 3
+
+---
+
+## Gate Approved
+**Timestamp**: 2026-09-13T14:14:03Z
+**Event**: GATE_APPROVED
+**Stage**: practices-discovery
+**User Input**: Approve
+
+---
+
+## Stage Completion
+**Timestamp**: 2026-09-13T14:14:03Z
+**Event**: STAGE_COMPLETED
+**Stage**: practices-discovery
+**Validation Basis**: {"graphContract":"sha256:886af627a0fea6d271a662e4a54b4c5993ecee715d6144d46d4a58c2bc3d19bb","inputs":[],"outputs":[{"artifact":"discovered-rules","contentHash":"sha256:819875d31e11f24e2f21ac11c83c795e6a4d12ca05ffb89bb9e1acd944942ece","instanceCount":1,"presentCount":1,"producer":"practices-discovery","required":true,"structureHash":"sha256:5c0e32ec6e8592c125f7541680699b4774d9ec574f15fe3501a6d205c337e143"},{"artifact":"evidence","contentHash":"sha256:657b9ede93f465ddb8756dfa2af4ea38124b626c669725960658276559b3a51b","instanceCount":1,"presentCount":1,"producer":"practices-discovery","required":true,"structureHash":"sha256:f432921568011b3f5fcd735b0c366d8302ed35fea708523b76005516afc320b2"},{"artifact":"practices-discovery-timestamp","contentHash":"sha256:9f71c4f7a363ed90ef82c3bdaf389b780f65e4aa607aee6fa8f1f021827f28d7","instanceCount":1,"presentCount":1,"producer":"practices-discovery","required":true,"structureHash":"sha256:0625eeabf090bea8140ac0ea2c3214f2d97bee00027af0e9980e463eed3bf1f2"},{"artifact":"team-practices","contentHash":"sha256:aabfbbba50eea5103f04b787e908476869043ff836da7f09c2eccc270b59d755","instanceCount":1,"presentCount":1,"producer":"practices-discovery","required":true,"structureHash":"sha256:692826ca08abb39743dabc39bb0499e54133979a60eb527772fcfdd1a097251b"}],"projectType":"greenfield","schema":3}
+**Details**: Stage Practices Discovery approved by gate
+
+---
+
+## Stage Start
+**Timestamp**: 2026-09-13T14:14:03Z
+**Event**: STAGE_STARTED
+**Stage**: requirements-analysis
+**Agent**: aidlc-product-agent
+
+---

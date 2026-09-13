@@ -15,6 +15,7 @@
 <!-- example: 2026-05-29T10:14:32Z — picked TDD over BDD this run; the team is unit-first and the domain is well-understood -->
 - 2026-09-13T14:10:00Z — クローン HEAD（a0ee441）ではなくタグ v2.8.2（355903d）を出典の正とした; インストール済み first/.claude/ がタグと一致することを developer が確認し、HEAD には 2.8.2 に無い docs/core 変更が 40 ファイル含まれるため。以降の裏取りはチェックアウト済みのタグの木に対して行う。
 - 2026-09-13T14:10:00Z — 検査スクリプトを CI（deploy.yml）に 1 ステップ追加する案を採った; developer は ci-pipeline ステージが SKIP のため見送りを提案したが、Q13 で org.md の「リンタを CI で実行」を 3 検査に読み替える以上、CI で実行しないと読み替えが空文になる。
+- 2026-09-13T14:25:00Z — practices-discovery-timestamp.md への required-sections センサーの advisory（H2 が 0 件）を受容した; ステージ定義が「1 行のみ」を契約として定めるため契約を優先し、evidence.md の未解決欄に記録した。
 
 ## Open questions
 <!-- example: 2026-05-29T10:14:32Z — confirm the retention window with compliance before the next stage hardens the schema -->
