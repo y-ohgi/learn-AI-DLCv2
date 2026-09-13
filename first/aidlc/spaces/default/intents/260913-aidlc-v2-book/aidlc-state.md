@@ -7,7 +7,7 @@
 - **Scope**: docs-book
 - **Start Date**: 2026-09-13T13:01:37Z
 - **State Version**: 8
-- **Active Agent**: aidlc-product-agent
+- **Active Agent**: aidlc-pipeline-deploy-agent
 - **Worktree Path**:
 - **Bolt Refs**:
 - **Practices Affirmed Timestamp**:
@@ -28,8 +28,8 @@
 
 ## Execution Plan Summary
 - **Total Stages**: 14
-- **Completed**: 4
-- **In Progress**: scope-definition
+- **Completed**: 5
+- **In Progress**: practices-discovery
 
 ## Runtime State
 - **Revision Count**: 1
@@ -38,8 +38,8 @@
 <!-- Status values: Pending, Active, Verified, Skipped -->
 
 - **Initialization**: Verified
-- **Ideation**: Active
-- **Inception**: Pending
+- **Ideation**: Verified
+- **Inception**: Active
 - **Construction**: Pending
 - **Operation**: Pending
 
@@ -55,14 +55,14 @@
 - [x] intent-capture — EXECUTE
 - [ ] market-research — SKIP
 - [ ] feasibility — SKIP
-- [-] scope-definition — EXECUTE
+- [x] scope-definition — EXECUTE
 - [ ] team-formation — SKIP
 - [ ] rough-mockups — SKIP
 - [ ] approval-handoff — SKIP
 
 ### INCEPTION PHASE
 - [ ] reverse-engineering — SKIP
-- [ ] practices-discovery — EXECUTE
+- [-] practices-discovery — EXECUTE
 - [ ] requirements-analysis — EXECUTE
 - [ ] user-stories — SKIP
 - [ ] refined-mockups — SKIP
@@ -91,13 +91,13 @@ Per unit: [TBD]
 - [ ] feedback-optimization — SKIP
 
 ## Current Status
-- **Lifecycle Phase**: IDEATION
-- **Current Stage**: scope-definition
-- **Next Stage**: practices-discovery
+- **Lifecycle Phase**: INCEPTION
+- **Current Stage**: practices-discovery
+- **Next Stage**: requirements-analysis
 - **Status**: Running
-- **Last Updated**: 2026-09-13T13:27:23Z
+- **Last Updated**: 2026-09-13T13:31:33Z
 
 ## Session Resume Point
-- **Last Completed Stage**: intent-capture
-- **Next Action**: Execute Scope Definition
+- **Last Completed Stage**: scope-definition
+- **Next Action**: Execute Practices Discovery
 - **Pending Artifacts**: none

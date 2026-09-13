@@ -591,3 +591,183 @@
 **Agent**: aidlc-product-agent
 
 ---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:29:32Z
+**Event**: DECISION_RECORDED
+**Stage**: scope-definition
+**Decision**: 質問ファイルへの回答方法（対話モード）の選択
+**Options**: Guide me,I'll edit the file,Chat
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:29:32Z
+**Event**: QUESTION_ANSWERED
+**Stage**: scope-definition
+**Details**: I'll edit the file
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:29:32Z
+**Event**: DECISION_RECORDED
+**Stage**: scope-definition
+**Decision**: Does this all look correct before I generate the artifact?
+**Options**: Looks correct,Request changes
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/ideation/scope-definition/scope-definition-questions.md
+
+---
+
+## Summary Confirmation Recorded
+**Timestamp**: 2026-09-13T13:29:32Z
+**Event**: SUMMARY_CONFIRMATION_RECORDED
+**Stage**: scope-definition
+**Details**: Looks correct
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/ideation/scope-definition/scope-definition-questions.md
+**Questions SHA-256**: fcb58451b98d9e7b5dd24a52ec684808863e09291c32004cb771fc3e7f6bbee4
+**Hash Scope**: confirmed-content-v1
+**Summary Authorization Id**: 749d3b2aebbae510e242fa4efedf9b03b0392e73a9414b3d3c8574286fce877e
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-13T13:30:56Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/ideation/scope-definition/scope-definition-questions.md
+**Context**: ideation > scope-definition > scope-definition-questions.md
+**Summary Authorization Id**: 749d3b2aebbae510e242fa4efedf9b03b0392e73a9414b3d3c8574286fce877e
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-13T13:30:56Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/ideation/scope-definition/scope-document.md
+**Context**: ideation > scope-definition > scope-document.md
+**Summary Authorization Id**: 749d3b2aebbae510e242fa4efedf9b03b0392e73a9414b3d3c8574286fce877e
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-13T13:30:57Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/ideation/scope-definition/intent-backlog.md
+**Context**: ideation > scope-definition > intent-backlog.md
+**Summary Authorization Id**: 749d3b2aebbae510e242fa4efedf9b03b0392e73a9414b3d3c8574286fce877e
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:31:31Z
+**Event**: DECISION_RECORDED
+**Stage**: scope-definition
+**Decision**: 学び（learnings）の保存: 候補 c1〜c4 のうち残すもの、および「次回に向けて追加することはあるか」
+**Options**: c1 毎フェーズの調査/レビューの解釈 → project.md ## Corrections,c2 境界の確定（保存しない）,c3 claude 版の再利用禁止 → project.md ## Forbidden,c4 章末出典節 → project.md ## Corrections,Nothing to add,Add a note
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:31:32Z
+**Event**: QUESTION_ANSWERED
+**Stage**: scope-definition
+**Details**: Keep c1, c3, c4 (project scope); skip c2; Nothing to add
+
+---
+
+## Rule Learned
+**Timestamp**: 2026-09-13T13:31:32Z
+**Event**: RULE_LEARNED
+**Stage**: scope-definition
+**Candidate-ID**: c1
+**Content-Hash**: 3366c838a4e470eb360fbc193beb63b5476978f5666ffaa57a88b7ce1bdad000
+**Destination**: <project-dir>/aidlc/spaces/default/memory/project.md
+**Heading**: ## Corrections
+**Source**: orchestrator
+
+---
+
+## Rule Learned
+**Timestamp**: 2026-09-13T13:31:32Z
+**Event**: RULE_LEARNED
+**Stage**: scope-definition
+**Candidate-ID**: c3
+**Content-Hash**: a3418a057317935f939f63188de9be8dfdb2d2728866739377d6c5028925f33f
+**Destination**: <project-dir>/aidlc/spaces/default/memory/project.md
+**Heading**: ## Forbidden
+**Source**: orchestrator
+
+---
+
+## Rule Learned
+**Timestamp**: 2026-09-13T13:31:32Z
+**Event**: RULE_LEARNED
+**Stage**: scope-definition
+**Candidate-ID**: c4
+**Content-Hash**: 00190d2ef5824d901e2c24078719fe47ea5b619ea97f245b57c108ffa352022e
+**Destination**: <project-dir>/aidlc/spaces/default/memory/project.md
+**Heading**: ## Corrections
+**Source**: orchestrator
+
+---
+
+## Stage Awaiting Approval
+**Timestamp**: 2026-09-13T13:31:33Z
+**Event**: STAGE_AWAITING_APPROVAL
+**Stage**: scope-definition
+
+---
+
+## Gate Approved
+**Timestamp**: 2026-09-13T13:31:33Z
+**Event**: GATE_APPROVED
+**Stage**: scope-definition
+**User Input**: Approve
+
+---
+
+## Stage Completion
+**Timestamp**: 2026-09-13T13:31:33Z
+**Event**: STAGE_COMPLETED
+**Stage**: scope-definition
+**Validation Basis**: {"graphContract":"sha256:f507bca6811bab5a3fbe73663d1debe5d0de707829c0a8a0d3c77b97f91a29c7","inputs":[{"artifact":"intent-statement","contentHash":"sha256:0c3638234af8f0827f96f887e05a091d4e07829eb3d2697b5dbeda0cd369424c","instanceCount":1,"presentCount":1,"producer":"intent-capture","required":true,"structureHash":"sha256:6f54c1ca1896539f63c5b32ad40602f870cf543fd1c460e22bde9abd9290c3af"}],"outputs":[{"artifact":"intent-backlog","contentHash":"sha256:4d363170791f04a28b77c6c0494faa8e55a70ab2acc6bb93f55156438777a976","instanceCount":1,"presentCount":1,"producer":"scope-definition","required":true,"structureHash":"sha256:dadebf85bff28ef61cd807fbfd6e893e6b9bedbae8fb79cc7c7b76c3d5237eb6"},{"artifact":"scope-definition-questions","contentHash":"sha256:369d5989e576a828cabce6232a6f0e028c80aa0ef45311f24692bc30be4fd0dc","instanceCount":1,"presentCount":1,"producer":"scope-definition","required":true,"structureHash":"sha256:f7a873dbb33ca5d5740929db7e2b1fdf034886e85786fd4f0b459031de5c88ed"},{"artifact":"scope-document","contentHash":"sha256:e45411800c116374168436322042bc6aeb19e2752a1ffc1fa03307b3f343c325","instanceCount":1,"presentCount":1,"producer":"scope-definition","required":true,"structureHash":"sha256:1a0f24e7e8d064198ad918ecd44737e347b0e0647c5f660748df557ed3a8951e"}],"projectType":"greenfield","schema":3}
+**Details**: Stage Scope Definition approved by gate
+
+---
+
+## Phase Completion
+**Timestamp**: 2026-09-13T13:31:33Z
+**Event**: PHASE_COMPLETED
+**From phase**: ideation
+**To phase**: inception
+**Stages completed**: 5
+
+---
+
+## Phase Verification
+**Timestamp**: 2026-09-13T13:31:33Z
+**Event**: PHASE_VERIFIED
+**Phase boundary**: ideation → inception
+
+---
+
+## Phase Start
+**Timestamp**: 2026-09-13T13:31:33Z
+**Event**: PHASE_STARTED
+**Phase**: inception
+**Scope**: docs-book
+
+---
+
+## Stage Start
+**Timestamp**: 2026-09-13T13:31:33Z
+**Event**: STAGE_STARTED
+**Stage**: practices-discovery
+**Agent**: aidlc-pipeline-deploy-agent
+
+---
