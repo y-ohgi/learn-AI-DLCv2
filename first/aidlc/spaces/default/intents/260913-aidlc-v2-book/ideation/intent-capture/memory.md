@@ -20,3 +20,4 @@
 <!-- example: 2026-05-29T10:14:32Z — confirm the retention window with compliance before the next stage hardens the schema -->
 - 2026-09-13T13:04:58Z — 依頼者本人が後日この記録を確認したとき、代理回答（特に Q3 の成功指標と Q8 の境界）に修正が入る可能性がある; 修正は次のワークフロー（新しい intent）で扱う。
 - 2026-09-13T13:19:17Z — advisory レビュー（1 パス）のステージで Request Changes → 改訂 → revised と進めると、エンジンは改訂後のレビュー証跡を要求しつつ 2 回目のレビュー要求を予算超過で拒否し、redo-jump を唯一の回復策として提示した; プロトコル文書（reviewer module「advisory は改訂時に 1 回の新しい advisory パスとして再実行」）と engine の挙動が一致していない可能性があり、教材ではこの実挙動を一次情報（監査ログ）として記述する。
+- 2026-09-13T13:27:22Z — 再レビュー所見 R-08（「調査とレビューは毎フェーズ行う」の頻度要件が未反映）と R-09（ランディングページと /claude/ 再配置が製品境界の内か外か）は Accepted risk として承認し、scope-definition と practices-discovery の入力として引き継ぐ; R-10（回答本文を超える軽微な補足）は次回以降の記述で回答本文の範囲に留める。

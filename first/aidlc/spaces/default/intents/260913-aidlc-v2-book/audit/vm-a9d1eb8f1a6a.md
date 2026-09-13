@@ -526,3 +526,68 @@
 **Request Id**: review:29c46c44145e34691a78871d84c95e6c
 
 ---
+
+## Review Completed
+**Timestamp**: 2026-09-13T13:26:52Z
+**Event**: REVIEW_COMPLETED
+**Stage**: intent-capture
+**Reviewer**: aidlc-product-lead-agent
+**Iteration**: 1
+**Verdict**: READY
+**Request Fingerprint**: sha256:0a18a3360a696f04d9a1ffab1d1adbafa6df643dbf8d917be52a7f5983e06275
+**Artifact Fingerprint**: sha256:0a18a3360a696f04d9a1ffab1d1adbafa6df643dbf8d917be52a7f5983e06275
+**Request Id**: review:29c46c44145e34691a78871d84c95e6c
+**Review Record**: .aidlc-reviews/intent-capture/stage/ab726ad3bfdceff1/1.json
+**Review Record Digest**: sha256:6ae15b85f4ca3f848b5af95f6c9a0349156ff262205b47ee55e29cec86c38220
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:26:52Z
+**Event**: DECISION_RECORDED
+**Stage**: intent-capture
+**Decision**: 学び（learnings）の保存（redo 後の再実施）: 既に保存済みの c1・c2 以外に残す候補はあるか／次回に向けて追加はあるか
+**Options**: Keep none (c1,c2 already persisted),Nothing to add,Add a note
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:26:52Z
+**Event**: QUESTION_ANSWERED
+**Stage**: intent-capture
+**Details**: Keep none (c1,c2 already persisted); Nothing to add
+
+---
+
+## Stage Awaiting Approval
+**Timestamp**: 2026-09-13T13:26:53Z
+**Event**: STAGE_AWAITING_APPROVAL
+**Stage**: intent-capture
+
+---
+
+## Gate Approved
+**Timestamp**: 2026-09-13T13:27:23Z
+**Event**: GATE_APPROVED
+**Stage**: intent-capture
+**User Input**: Approve
+**Review Finding Dispositions**: {"version":1,"dispositions":[{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/ideation/intent-capture/intent-statement.md","id":"R-08","fingerprint":"sha256:7e8b1509f48aa4200e4f3e8570b5668ea67b67b84dcc8f1439f193bff19289ff","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/ideation/intent-capture/intent-statement.md","id":"R-09","fingerprint":"sha256:75ee6d58e5ecabcd827d88c8ec5d5cfd4698ac38c7487df9c6ec649b83ff98f5","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/ideation/intent-capture/intent-statement.md","id":"R-10","fingerprint":"sha256:2239d8aa7c6531a269514a4530eca4a89b306d5a32d29c7409674d20d8f67e7e","status":"Accepted risk"}]}
+
+---
+
+## Stage Completion
+**Timestamp**: 2026-09-13T13:27:23Z
+**Event**: STAGE_COMPLETED
+**Stage**: intent-capture
+**Validation Basis**: {"graphContract":"sha256:a2667bc36979eded33d5632e32a90dcf92e51265610d1ca27064a44384271e07","inputs":[],"outputs":[{"artifact":"intent-capture-questions","contentHash":"sha256:6eb4f88c0c346eb02ac58e8b07babfcfe8a10ba7513040272c0ebdc2e035dece","instanceCount":1,"presentCount":1,"producer":"intent-capture","required":true,"structureHash":"sha256:c32feff6f3df46ac4c71671a752f2cc856fb41afe648dac115cc9858778d31fe"},{"artifact":"intent-statement","contentHash":"sha256:0c3638234af8f0827f96f887e05a091d4e07829eb3d2697b5dbeda0cd369424c","instanceCount":1,"presentCount":1,"producer":"intent-capture","required":true,"structureHash":"sha256:6f54c1ca1896539f63c5b32ad40602f870cf543fd1c460e22bde9abd9290c3af"},{"artifact":"stakeholder-map","contentHash":"sha256:29ebf395b7b9ecc7071da1251f5d26a34b914895b9fc2d24b75900ec153b4030","instanceCount":1,"presentCount":1,"producer":"intent-capture","required":true,"structureHash":"sha256:b27ebb3117013d8cdf898b6eaf36f6f64a626d872253af38e7cf709fd5cea0ad"}],"projectType":"greenfield","schema":3}
+**Details**: Stage Intent Capture & Framing approved by gate
+
+---
+
+## Stage Start
+**Timestamp**: 2026-09-13T13:27:23Z
+**Event**: STAGE_STARTED
+**Stage**: scope-definition
+**Agent**: aidlc-product-agent
+
+---
