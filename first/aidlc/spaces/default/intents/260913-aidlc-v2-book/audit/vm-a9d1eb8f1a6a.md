@@ -771,3 +771,21 @@
 **Agent**: aidlc-pipeline-deploy-agent
 
 ---
+
+## Error Logged
+**Timestamp**: 2026-09-13T13:48:05Z
+**Event**: ERROR_LOGGED
+**Tool**: aidlc-log
+**Command**: aidlc-log engine log decision --help
+**Error**: --help expects a value, got end of arguments.
+
+---
+
+## Error Logged
+**Timestamp**: 2026-09-13T13:48:05Z
+**Event**: ERROR_LOGGED
+**Tool**: aidlc-log
+**Command**: aidlc-log engine log answer --help
+**Error**: --help expects a value, got end of arguments.
+
+---
