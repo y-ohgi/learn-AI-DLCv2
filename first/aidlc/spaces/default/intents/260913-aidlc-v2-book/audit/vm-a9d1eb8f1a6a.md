@@ -789,3 +789,309 @@
 **Error**: --help expects a value, got end of arguments.
 
 ---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:53Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: 質問ファイルへの回答方法（対話モード）の選択
+**Options**: Guide me,I'll edit the file,Chat
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:53Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Guide me（コンダクターが依頼者の代理として 1 問ずつ回答し、根拠を明記する）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:53Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q1. 章を書く単位ごとの作業ブランチは、どこから切って、どこへ戻しますか？
+**Options**: A. いまのセッションブランチ `claude/ai-dlcv2-honkit-pages-1ylg3,B. 先にいまのブランチを `main` へ取り込み、以降は `main` から切って Bolt ごと,C. Bolt ごとの別ブランチは作らず、セッションブランチに直接コミットする,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:53Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q1: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:53Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q2. `main` へ取り込むときのマージ方法と、コミットメッセージの書き方はどうしますか？
+**Options**: A. `main` への最終 PR はマージコミット（依頼者自身が行った PR #1 と同じ方法）。コ,B. `main` への最終 PR も squash にする。コミットメッセージは A と同じ,C. マージ方法は GitHub の既定に任せ、コミットメッセージは自由文にする,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:54Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q2: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:54Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q3. 最初に薄い一本通しを作りますか？ ウォーキングスケルトンとは、部品同士がつながることを先に証明するために最初に作る、端から端まで動く最小版のことです。ここでは「HonKit の骨格（README / SUMMARY / book.json）+ 章 1 本 + 検査スクリプト」を `_site/first/` のビルドまで通すことを指します。
+**Options**: A. はい。骨格 + 章 1 本 + 検査スクリプト（Q7）を先に作り、ビルドと検査が通ることを確認し,B. はい。ただし検査スクリプトは含めず、骨格 + 章 1 本のビルドだけを通す,C. いいえ。最初から全章を順に書く,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:54Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q3: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:54Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q4. 薄い一本通しが「できた」と判定する条件と、その後の残りの章の進め方はどうしますか？
+**Options**: A. 判定条件は「ローカルで `npm run build` が成功し `_site/first/in,B. 判定条件は A と同じだが、その後の章は立ち止まらず連続で書き切り、最後にまとめて確認する,C. 判定条件は「`main` へ取り込み、公開 URL が 200 を返す」。その後は Bolt ご,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:54Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q4: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:54Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q5. 各章が「検証に通った」と言える条件は何ですか？
+**Options**: A. 次の 4 つ。(1) ビルド: `npm run build` が終了コード 0 で `_sit,B. `honkit build` の成功のみ,C. A に加えて、markdownlint などの文体・体裁チェックも通ること,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:54Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q5: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:55Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q6. 検証はいつ、どの順序で行いますか？
+**Options**: A. 章を書いてから検証する（test-after）。順序は「Bolt ごとに、骨格 → 章本文 → ,B. 章仕様（functional-design）で主張と出典を先に固め、書いてから build・リン,C. 章を書く前に検査スクリプトを先に書き、章を書くたびに走らせる（テスト先行）,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:55Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q6: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:55Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q7. リンクと出典の検査はどの手段で、どこに置き、どこまで厳しくしますか？（`honkit build` はリンク切れを検出しません）
+**Options**: A. 親リポジトリの `scripts/check-first.mjs` を新設し（`build-si,B. A と同じだが、`deploy.yml` には追加せず build-and-test でローカル,C. 既存の npm パッケージ（リンクチェッカー）を devDependency に追加して使う,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:55Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q7: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:55Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q8. ハンズオン章の再現確認（SM1）の合格線と、確認の仕方はどうしますか？
+**Options**: A. 一時ディレクトリで、章本文の `bash` フェンスに書いたとおり (1) `install.s,B. (4) `aidlc doctor` までを機械的に確認し、それ以降は本セッションの実行記録で代,C. 再現確認は行わず、本セッションの実行記録のみを根拠にする,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:55Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q8: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:55Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q9. 公開は既存の GitHub Actions（`main` への push → GitHub Pages）だけを使い、新しい配線は作らない、で良いですか？ 既存ワークフローへの小さな変更はどこまで許しますか？
+**Options**: A. 既存の `.github/workflows/deploy.yml` と `scripts/bu,B. 既存ワークフローは一切変更しない（検査はローカルのみ、権限もそのまま）,C. first 版専用のワークフローや別の公開先を追加する,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:55Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q9: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:56Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q10. `main` への取り込み（＝本番公開）は誰がどの手段で行い、公開の「完了」は何で判定しますか？
+**Options**: A. コンダクターが依頼者の代理で GitHub 上に PR を作成し、PR 上のビルドと検査の成功を,B. 依頼者が PR をマージする（ワークフローは PR 作成で停止する）。完了判定は A と同じ,C. PR を作らずコンダクターが `main` へ直接 push する。完了判定は `main` へ,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:56Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q10: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:56Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q11. 章末の `## 出典` 節の書き方と、claude 版へのリンクの書き方はどうしますか？
+**Options**: A. 出典はリンクにせず、1 行を `- [<名前空間>] <パス> <位置> — <裏付ける主張>`,B. 出典を Markdown リンクにする（`first/.bookignore` から `aidl,C. 出典は GitHub の固定 URL（タグ付き）で書く。claude 版へのリンクは A と同じ,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:56Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q11: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:56Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q12. 図と章の体裁（ファイル名・章テンプレート・Markdown の書式）はどうしますか？
+**Options**: A. 図は Mermaid を使わず ASCII 記法（箱の中のラベルは英数字のみ、日本語の説明は図の,B. 図は Mermaid プラグインを HonKit に追加して描き、章の体裁は claude 版に,C. 図も体裁も章ごとに執筆時に決める,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:56Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q12: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:56Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q13. markdownlint などの文体・体裁チェックツールを導入しますか？ org.md の Code Style は「リンタを CI で実行し、失敗で PR を止める」を既定にしています。
+**Options**: A. 導入しない。本プロジェクトのソースは Markdown なので、org.md の「リンタを CI,B. 導入する（markdownlint を devDependency に追加し、`npm run ,C. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:57Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q13: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T13:59:57Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Q14. 章に貼るログ・コマンド出力の扱い、ハンズオンで外部スクリプト（`curl … | sh`）を教える型、日本語の表記規則はどうしますか？
+**Options**: A. 貼り付けるログ・出力からはアカウント ID・ARN・トークン・メールアドレスを除き、絶対パスは ,B. ログはそのまま貼り、外部スクリプトは一次情報の逐語コマンドだけを示す。日本語の表記は claud,C. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-13T13:59:57Z
+**Event**: QUESTION_ANSWERED
+**Stage**: practices-discovery
+**Details**: Q14: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-13T14:00:22Z
+**Event**: DECISION_RECORDED
+**Stage**: practices-discovery
+**Decision**: Does this all look correct before I generate the artifact?
+**Options**: Looks correct,Request changes
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/practices-discovery/practices-discovery-questions.md
+
+---
+
+## Error Logged
+**Timestamp**: 2026-09-13T14:00:42Z
+**Event**: ERROR_LOGGED
+**Tool**: aidlc-log
+**Command**: aidlc-log engine log answer --stage practices-discovery --checkpoint summary-confirmation --questions-file aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/practices-discovery/practices-discovery-questions.md --details Looks correct
+**Error**: Cannot record the summary choice because no human reply has arrived after this question, or that turn was already used by another decision. End the turn, wait for the human's choice, then try again.
+
+---
+
+## Summary Confirmation Recorded
+**Timestamp**: 2026-09-13T14:00:59Z
+**Event**: SUMMARY_CONFIRMATION_RECORDED
+**Stage**: practices-discovery
+**Details**: Looks correct
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/practices-discovery/practices-discovery-questions.md
+**Questions SHA-256**: e66f7b2ed0900edb17680da3ec8a184c17676c2b6439fdd5ba64a5ebcf50d466
+**Hash Scope**: confirmed-content-v1
+**Summary Authorization Id**: b9dc7e923a9e86e187ceb340212be696b7148f5c9978c728febe6142b62184e4
+
+---
+
+## Error Logged
+**Timestamp**: 2026-09-13T14:03:32Z
+**Event**: ERROR_LOGGED
+**Tool**: aidlc-state
+**Command**: aidlc-state engine state practices-event
+**Error**: Usage: aidlc-state.ts practices-event --type <discovered|override|empty> [--field "Key: Value"]...
+
+---
+
+## Error Logged
+**Timestamp**: 2026-09-13T14:03:32Z
+**Event**: ERROR_LOGGED
+**Tool**: aidlc-state
+**Command**: aidlc-state engine state practices-promote
+**Error**: Usage: aidlc-state.ts practices-promote --team-practices <path> --discovered-rules <path> [--affirming-user <name>] [--target-dir <path>]
+
+---
