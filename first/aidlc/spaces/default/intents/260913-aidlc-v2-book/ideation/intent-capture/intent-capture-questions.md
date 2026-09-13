@@ -104,9 +104,40 @@ X. Other (please specify)
 
 根拠: 依頼文の成果物定義（honkit と GitHub Pages の公開のみ）、claude 版 1.4「失敗5: 儀式が目的化する」（不要ステージを持ち込まない）。
 
+## Q9. 依頼者から本ワークフロー（および親リポジトリの再構成）に対して与えられた指示の原文は何ですか？
+
+（レビュー所見 R-02/R-01 への対応: Q4〜Q8 の回答を実質的に決めている依頼者の指示を、要約ではなく原文のまま permitted source として登録するための質問です）
+
+A. 初期説明（[desc]）以外に指示は無い
+B. Not applicable
+X. Other (please specify)
+
+[Answer]: X. Other (please specify) — 依頼者の指示は以下の原文のとおり（2026-09-13、チャットで受領。誤字を含めて逐語）
+
+> AI-DLCv2を元に新しいhonkitを作ってください
+>
+> https://y-ohgi.github.io/learn-AI-DLCv2/
+> このページから現行のhonkitと新規honkitに飛べるようにしてください。
+> また、このページではそれぞれの概要を書いてください。
+>
+> 現行のhonkitは以下のパスになるようにリポジトリのディレクトリ構成ととビルド結果を変更してください
+> https://y-ohgi.github.io/learn-AI-DLCv2/claude/
+>
+> 新規でAI-DLCベースで作るものは以下のパスにしてください。
+> https://y-ohgi.github.io/learn-AI-DLCv2/first/
+>
+> 新規でAI-DLCv2ベースで作るものは私のようなAI-DLCv2/v1を知らない人をペルソナにしたものにしてください。
+> 調査とレビューは毎フェーズ行い、1時情報とコードをもとに間違った情報は取り込まないでください。
+> AI-DLCv2からの質問は既存のhonkitを参照させてください。
+>
+> 私は一切介入しません。
+> Pagesへのデプロイまで完了させてください。
+
+補足（代理判断の方針）: 「私は一切介入しません」「Pagesへのデプロイまで完了させてください」により、承認ゲートを含むワークフロー中のすべての判断（質問への回答、要約確認、前提の受け入れ、ゲートの承認／差し戻し、学びの保存）をコンダクターが依頼者の代理として行い、その根拠を「AI-DLCv2からの質問は既存のhonkitを参照させてください」に従って既存教材（claude 版）の該当箇所または本原文に求める。
+
 ## Consolidated Summary Confirmation
 
-回答の要約（すべて代理回答・根拠は各設問の末尾）:
+回答の要約（すべて代理回答・根拠は各設問の末尾。改訂1: Q9 を追加）:
 
 - 解く問題: AI-DLC を知らないエンジニア向けの日本語教材が無い／既存 claude 版が 2.7.1 時点で陳腐化／「直接書かせた版」と「AI-DLC で作った版」の比較実例が無い（Q1: D）
 - 読者: AI Agent は実務利用するが方法論は未経験のエンジニア。公開教材（Q2: A）
@@ -116,6 +147,7 @@ X. Other (please specify)
 - 決定者: 依頼者。ワークフロー中はコンダクターが claude 版を参照して代理判断。影響者は 2.8.2 の一次情報（Q6: A）
 - コミュニケーション: 記録ディレクトリに全成果物と監査ログを残し、完了時に PR とチャットで報告（Q7: A）
 - 製品境界: `docs-book` スコープどおり、教材とその公開のみ（Q8: A）
+- 依頼者の指示の原文を登録し、承認ゲートを含む全判断を代理で行う方針を明記（Q9: X. Other）
 
 Does this all look correct before I generate the artifact?
 
@@ -126,10 +158,13 @@ Does this all look correct before I generate the artifact?
 
 ## Assumption Confirmation
 
-成果物の `## Assumptions & Open Questions` に残った前提（原文どおり）:
+成果物の `## Assumptions & Open Questions` に残った前提（改訂1・原文どおり）:
 
-- 読者は日本語で読む。初期説明と既存教材が日本語であることから推定したもので、多言語対応は求められていないと解釈している。[assumption]
+- 読者は日本語で読む。初期説明・依頼文・既存教材が日本語であることから推定したもので、多言語対応は求められていないと解釈している。[assumption]
 - 依頼者の代理として行った回答（特に SM1〜SM3 の成功指標と製品境界）は、依頼者本人が後日この記録を見て修正する可能性がある。修正が入った場合は新しいワークフロー（intent）で扱う。[assumption]
+- claude 版は意図・読者像・ゴールに関する代理回答の根拠に限って用い、AI-DLC の事実記述は claude 版ではなく 2.8.2 の一次情報で裏取りする（Q6 の影響者と整合）。[assumption]
+- 開いた問い: SM2 の確認手段として「主張→出典の対応表」を成果物に採用するかは scope-definition で決める。[assumption]
+- 開いた問い: claude 版との住み分け（独立執筆／出典明記の再利用／リンク参照のみ）は scope-definition で確定する。[assumption]
 - 依頼者以外に、公開前に確認を求めるべきレビュアーは存在しないと解釈している。[assumption]
 
 A. Accept assumptions
