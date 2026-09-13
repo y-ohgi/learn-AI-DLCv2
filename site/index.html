@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>learn-AI-DLCv2 — AI-DLC v2 を学ぶ2つの教材</title>
+<meta name="description" content="AWS の AI-DLC（AI-Driven Development Life Cycle）v2 を学ぶための教材サイト。Claude Code が直接書いた版と、AI-DLC v2 のワークフローを回して作った版の2冊。">
+<style>
+  :root {
+    --bg: #f7f7f5; --fg: #1f2328; --muted: #57606a; --line: #d8dde3;
+    --card: #ffffff; --accent: #0b5cad; --accent2: #b35c00; --chip: #eef2f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1216; --fg: #e6e9ee; --muted: #9aa4b1; --line: #2a313a; --card: #171c23; --accent: #6db3ff; --accent2: #ffb366; --chip: #1f2730; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP", sans-serif; }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 48px 20px 64px; }
+  header h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: .01em; }
+  header p.lead { font-size: 1.1rem; color: var(--muted); margin: 0 0 32px; max-width: 46em; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin: 24px 0 40px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 24px; display: flex; flex-direction: column; }
+  .card h2 { margin: 0 0 4px; font-size: 1.35rem; }
+  .card .path { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .9rem; color: var(--muted); }
+  .card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0; }
+  .tag { background: var(--chip); border-radius: 999px; padding: 2px 10px; font-size: .8rem; color: var(--muted); }
+  .card p { margin: 8px 0; }
+  .card ul { margin: 8px 0 0; padding-left: 1.2em; }
+  .card .cta { margin-top: auto; padding-top: 16px; }
+  .btn { display: inline-block; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-weight: 600; color: #fff; background: var(--accent); }
+  .btn.alt { background: var(--accent2); }
+  .btn:hover { filter: brightness(1.08); }
+  h3 { margin-top: 40px; font-size: 1.15rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { border-bottom: 1px solid var(--line); padding: 10px 8px; text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; }
+  .note { border-left: 4px solid var(--accent2); background: var(--card); padding: 12px 16px; border-radius: 6px; color: var(--muted); font-size: .95rem; }
+  footer { margin-top: 48px; color: var(--muted); font-size: .9rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>learn-AI-DLCv2</h1>
+    <p class="lead">AWS の <strong>AI-DLC（AI-Driven Development Life Cycle）v2</strong> を学ぶための教材サイトです。同じテーマの教材が2冊あり、<strong>作り方が違います</strong>。読み比べると「AI に直接書かせる」と「AI-DLC のワークフローで作る」の差が見えます。</p>
+  </header>
+
+  <div class="cards">
+    <section class="card">
+      <h2>claude 版</h2>
+      <div class="path">/claude/</div>
+      <div class="tags"><span class="tag">初版</span><span class="tag">30ページ</span><span class="tag">Claude Code に直接依頼</span><span class="tag">AI-DLC 2.7.1 時点の資料に基づく</span></div>
+      <p>「AI-DLC v2 の教材を作って」という1回の依頼から、Claude Code が調査・執筆・公開までを<strong>方法論なしで一気通貫</strong>に行った版です。</p>
+      <ul>
+        <li>第1部: AI開発の歴史と種類（5世代・5スタイル・失敗パターン）</li>
+        <li>第2部: AI-DLC v2 の特徴（方法論 v1 → 実装 v2、エンジン、33ステージ、スコープ、エージェント、ゲート、監査、メリデメ）</li>
+        <li>第3部: ハンズオン（express → bugfix → feature → 成果物の読み方）</li>
+        <li>第4部: チーム導入、付録（用語集・コマンド・参考リンク）</li>
+      </ul>
+      <p class="note">注意: 執筆時点（2026-09-07）の 2.7.1 ドキュメントに基づきます。2.8.0 以降、インストール方法は <code>dist/</code> のコピーから <code>install.sh</code> によるネイティブ <code>aidlc</code> コマンドと <code>aidlc config</code> に変わりました。最新手順は first 版を参照してください。</p>
+      <div class="cta"><a class="btn" href="./claude/">claude 版を読む</a></div>
+    </section>
+
+    <section class="card">
+      <h2>first 版</h2>
+      <div class="path">/first/</div>
+      <div class="tags"><span class="tag">AI-DLC v2 で制作</span><span class="tag">AI-DLC 2.8.2</span><span class="tag">成果物・監査ログ同梱</span></div>
+      <p>AI-DLC v2（2.8.2）をこのリポジトリにインストールし、<strong>AI-DLC のワークフローそのものを回して</strong>作った版です。要件分析 → 作業単位への分解 → 章の設計 → 執筆 → ビルド検証 → 公開を、AI-DLC の承認ゲートと監査ログ付きで進めました。</p>
+      <ul>
+        <li>AI-DLC v1/v2 を知らないエンジニアが読者。歴史・概念・特徴・ハンズオン</li>
+        <li>各フェーズで一次情報（2.8.2 のドキュメントとコード）に照らして事実確認</li>
+        <li>この本自身を作ったときの AI-DLC の成果物（要件・Unit・監査ログ）を実例として収録</li>
+      </ul>
+      <p class="note">AI-DLC が出す質問には、人間の代わりに claude 版の内容を参照して回答しました。その判断ログも本文に含めています。</p>
+      <div class="cta"><a class="btn alt" href="./first/">first 版を読む</a></div>
+    </section>
+  </div>
+
+  <h3>2冊の違い</h3>
+  <table>
+    <thead><tr><th></th><th>claude 版</th><th>first 版</th></tr></thead>
+    <tbody>
+      <tr><td>作り方</td><td>Claude Code に1回依頼し、Claude Code が調査から公開まで自律的に実行</td><td>AI-DLC v2 のワークフロー（フェーズ・ステージ・承認ゲート）を回して制作</td></tr>
+      <tr><td>参照した AI-DLC の版</td><td>2.7.1（2026-09-07 時点の main）</td><td>2.8.2（2026-09-13 時点の最新リリース）</td></tr>
+      <tr><td>決定の記録</td><td>PR の説明文のみ</td><td>AI-DLC の記録ディレクトリ（要件・質問ファイル・Unit・監査ログ）</td></tr>
+      <tr><td>向いている読み方</td><td>全体像を速く掴む。手法の比較・導入判断</td><td>AI-DLC v2 の「実際の回し方」を、実物の成果物と一緒に追う</td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <p>ソース: <a href="https://github.com/y-ohgi/learn-AI-DLCv2">github.com/y-ohgi/learn-AI-DLCv2</a> ／ 一次情報: <a href="https://github.com/awslabs/aidlc-workflows">awslabs/aidlc-workflows</a></p>
+  </footer>
+</div>
+</body>
+</html>

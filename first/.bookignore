@@ -1,0 +1,8 @@
+.claude
+aidlc
+node_modules
+.gitignore
+.mcp.json
+CLAUDE.md
+aidlc.settings.json
+aidlc.settings.local.json

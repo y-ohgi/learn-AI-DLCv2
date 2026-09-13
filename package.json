@@ -1,11 +1,14 @@
 {
   "name": "learn-ai-dlcv2",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "AI-DLC v2 を学ぶための教材 (HonKit)",
+  "description": "AI-DLC v2 を学ぶための教材サイト (HonKit x2 + ランディングページ)",
   "scripts": {
-    "serve": "honkit serve",
-    "build": "honkit build . _book"
+    "build": "node scripts/build-site.mjs",
+    "build:claude": "honkit build claude _site/claude",
+    "build:first": "honkit build first _site/first",
+    "serve:claude": "honkit serve claude",
+    "serve:first": "honkit serve first"
   },
   "devDependencies": {
     "honkit": "^6.0.4"
