@@ -1,0 +1,8 @@
+{
+  "stage": "code-generation",
+  "unit": "u3-context",
+  "version": 1,
+  "writes": [
+    { "path": "first/docs/01-context/01-where-you-are.md" }
+  ]
+}

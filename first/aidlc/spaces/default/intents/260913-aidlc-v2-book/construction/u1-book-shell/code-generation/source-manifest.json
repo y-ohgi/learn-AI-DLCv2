@@ -1,0 +1,10 @@
+{
+  "stage": "code-generation",
+  "unit": "u1-book-shell",
+  "version": 1,
+  "writes": [
+    { "path": "first/README.md" },
+    { "path": "first/SUMMARY.md" },
+    { "path": "first/book.json" }
+  ]
+}

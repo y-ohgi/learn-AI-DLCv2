@@ -1,0 +1,10 @@
+{
+  "stage": "code-generation",
+  "unit": "u1-book-shell",
+  "upstream_ids": ["FR1", "FR1.1", "FR1.2"],
+  "coverage": [
+    { "id": "FR1", "status": "OK", "target": "first/SUMMARY.md" },
+    { "id": "FR1.1", "status": "OK", "target": "first/README.md" },
+    { "id": "FR1.2", "status": "OK", "target": "first/book.json" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "stage": "code-generation",
+  "unit": "u3-context",
+  "upstream_ids": ["FR2", "FR2.1", "FR8", "FR8.1"],
+  "coverage": [
+    { "id": "FR2", "status": "OK", "target": "first/docs/01-context/01-where-you-are.md" },
+    { "id": "FR2.1", "status": "OK", "target": "first/docs/01-context/01-where-you-are.md" },
+    { "id": "FR8", "status": "OK", "target": "first/docs/01-context/01-where-you-are.md" },
+    { "id": "FR8.1", "status": "OK", "target": "first/docs/01-context/01-where-you-are.md" }
+  ]
+}

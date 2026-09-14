@@ -1,0 +1,11 @@
+{
+  "stage": "code-generation",
+  "unit": "u2-build-and-check",
+  "version": 1,
+  "writes": [
+    { "path": "scripts/check-first.mjs" },
+    { "path": "scripts/build-site.mjs" },
+    { "path": "package.json" },
+    { "path": ".github/workflows/deploy.yml" }
+  ]
+}

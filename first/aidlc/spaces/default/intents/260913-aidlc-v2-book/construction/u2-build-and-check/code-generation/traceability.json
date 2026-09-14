@@ -1,0 +1,8 @@
+{
+  "stage": "code-generation",
+  "unit": "u2-build-and-check",
+  "upstream_ids": ["FR1.3"],
+  "coverage": [
+    { "id": "FR1.3", "status": "OK", "target": "scripts/check-first.mjs" }
+  ]
+}
