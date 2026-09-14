@@ -1570,3 +1570,180 @@
 **Agent**: aidlc-architect-agent
 
 ---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:35:42Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: 質問ファイルへの回答方法（対話モード）の選択
+**Options**: Guide me,I'll edit the file,Chat
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:35:43Z
+**Event**: QUESTION_ANSWERED
+**Stage**: domain-design
+**Details**: Guide me（コンダクターが依頼者の代理として 1 問ずつ回答し、根拠を明記する）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:35:43Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: Q1. 教材をどの「まとまり」に分けて設計・執筆・検査しますか？
+**Options**: A. 12 個のまとまりに分ける。内容の 6 つ（第 1 部 現在地 / 第 2 部 概念 / 第 3,B. 教材全体を 1 つのまとまりとし、章は単なるファイルとして扱う,C. 章（20 本）をそれぞれ 1 つのまとまりとする,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:35:43Z
+**Event**: QUESTION_ANSWERED
+**Stage**: domain-design
+**Details**: Q1: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:35:43Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: Q2. 章ファイルの名前と付録の見出しの形はどうしますか？（OQ3）
+**Options**: A. 部ディレクトリと章ファイルを次に固定する。`docs/01-context/01-where-y,B. 章ファイル名は日本語にする（例: `docs/01-現在地/01-あなたのAI利用.md`）,C. 章ファイル名は執筆時に各章で決める,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:35:43Z
+**Event**: QUESTION_ANSWERED
+**Stage**: domain-design
+**Details**: Q2: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:35:43Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: Q3. 英語のまま残す固定トークンと日本語に訳す用語の対訳表（OQ2）は、どの方針で作りますか？
+**Options**: A. 三分類で作る。(1) 英語のまま・コードスパン: コマンド（`aidlc doctor`、`/a,B. 英語をすべてカタカナに訳す（Bolt → ボルト、Unit → ユニット など）,C. 訳さず英語のまま書き、訳語は付けない,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:35:43Z
+**Event**: QUESTION_ANSWERED
+**Stage**: domain-design
+**Details**: Q3: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:35:44Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: Q4. 方法論の原典（AWS ブログ）はどう引きますか？（OQ1）
+**Options**: A. 出典節では `[2.8.2] docs/guide/00-introduction.md § W,B. 出典節に第 5 の名前空間 `[origin]` を追加して原典を直接引く,C. 原典には触れない,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:35:44Z
+**Event**: QUESTION_ANSWERED
+**Stage**: domain-design
+**Details**: Q4: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:35:44Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: Q5. 章に載せる「出典行」と「記録からの抜粋」は、どのまとまりが所有しますか？
+**Options**: A. 出典と抜粋の仕組み（`SourceRegister`）が所有する。出典行（名前空間・パス・位置・,B. 各部がそれぞれ自分の出典と抜粋の形式を決める,C. 出典は付録 C にだけ集約し、章末には置かない,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:35:44Z
+**Event**: QUESTION_ANSWERED
+**Stage**: domain-design
+**Details**: Q5: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:36:01Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: Does this all look correct before I generate the artifact?
+**Options**: Looks correct,Request changes
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/domain-design-questions.md
+
+---
+
+## Summary Confirmation Recorded
+**Timestamp**: 2026-09-14T01:36:01Z
+**Event**: SUMMARY_CONFIRMATION_RECORDED
+**Stage**: domain-design
+**Details**: Looks correct
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/domain-design-questions.md
+**Questions SHA-256**: 026710f07a7e795681598c6cd8e51f24d88f6143d6142ca527d9d0b6b4401092
+**Hash Scope**: confirmed-content-v1
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:39:35Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/domain-design-questions.md
+**Context**: inception > domain-design > domain-design-questions.md
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T01:39:35Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/components.md
+**Context**: inception > domain-design > components.md
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T01:39:36Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/decisions.md
+**Context**: inception > domain-design > decisions.md
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T01:39:36Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/traceability.json
+**Context**: inception > domain-design > traceability.json
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Review Requested
+**Timestamp**: 2026-09-14T01:39:57Z
+**Event**: REVIEW_REQUESTED
+**Stage**: domain-design
+**Reviewer**: aidlc-architecture-reviewer-agent
+**Iteration**: 1
+**Artifact Fingerprint**: sha256:8b58eef7d48e88bd8be57aa95364d8daf2d21e66b14e9ef46e28c235b25e44aa
+**Request Id**: review:60e6da77346bb69580867083f0f73f2c
+
+---
