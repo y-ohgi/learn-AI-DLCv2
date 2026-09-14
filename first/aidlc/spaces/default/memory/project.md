@@ -48,6 +48,8 @@
 
 - AI-DLC の事実確認と章末の出典は awslabs/aidlc-workflows のタグ v2.8.2（commit 355903d）の木と、コミット済みの first/.claude/（同タグの投影）・first/aidlc/（実行記録）に対して行う。クローンの HEAD やスクラッチパッドの別コピーは入力にしない (learned 2026-09-13) <!-- cid:260913-aidlc-v2-book:practices-discovery:4750c6251bb95651e5f8e570566f037ad0669e0cd1556934570e31596cac48a0 -->
 
+- first 版で「v2」は awslabs/aidlc-workflows の 2.x 系（本書は 2.8.2）を指す。「v1」はタグ v2.8.2 の一次情報に現れない呼称なので first 版では断定せず、歴史的説明は claude 版へのリンクに留める。方法論の原典（AWS ブログ）は docs/guide/00-introduction.md が参照するものとして引く (learned 2026-09-14) <!-- cid:260913-aidlc-v2-book:requirements-analysis:1b434e2444140950e69a42b46120d19b5eb57d5e9491e0713336403bd57ec903 -->
+
 ## Scope Overrides
 
 <!-- Custom scope rules for this project. -->

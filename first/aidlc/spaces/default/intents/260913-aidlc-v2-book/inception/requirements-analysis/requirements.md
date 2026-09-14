@@ -22,19 +22,19 @@
 
 ### FR2 第 1 部 読者の現在地（P2、Must）
 
-- **FR2.1 1.1 あなたの AI 利用はどこにいるか** — 学習目標: 読者は自分の AI Agent 利用を「補完 → チャット → エージェントに指示して差分をレビュー」の流れの中に位置づけ、なぜ「方法論」の話になるのかを説明できる。必須内容: (1) 読者の日常（Claude Code に指示し差分をレビューする）、(2) 個人では効くのにチームとプロジェクトでスケールしない理由、(3) 本書で「方法論」と呼ぶものの意味、(4) 本書の読み方（部の順、2.8.2 固定、出典の見方）。AI 開発の歴史と種類の詳細は claude 版 第 1 部へリンクし、first 版では要点のみ（Q2）。
+- **FR2.1 1.1 あなたの AI 利用はどこにいるか** — 学習目標: 読者は自分の AI Agent 利用を「補完 → チャット → エージェントに指示して差分をレビュー」の流れの中に位置づけ、なぜ「方法論」の話になるのかを説明できる。必須内容: (1) 読者の日常（Claude Code に指示し差分をレビューする）、(2) 個人では効くのにチームとプロジェクトでスケールしない理由、(3) 本書で「方法論」と呼ぶものの意味、(4) 本書の読み方（部の順、2.8.2 固定、出典の見方）、(5) AI 開発の歴史と種類の要点（数文。詳細は claude 版 第 1 部へリンク）、(6) 次に読むものへの導線（FR8.1）。first 版では歴史と種類は要点のみ（Q2、R-07）。
 
 ### FR3 第 2 部 AI-DLC の概念（P3、Must、SM2）
 
-- **FR3.1 2.1 AI-DLC とは何か** — 学習目標: 読者は「AI-DLC」「v2」「v1」という言葉を聞いたとき、それぞれが何を指し得るかを 2.8.2 の一次情報に基づいて位置づけられる。必須内容: (1) AI-DLC は AI 支援開発を反復可能で追跡可能なフェーズに構造化する方法論で、AWS の AI-DLC 方法論（ブログ）に由来し、`awslabs/aidlc-workflows` はそれをハーネス中立のコアから実装したものであること（`docs/guide/00-introduction.md § What is AI-DLC?`）、(2) 本書で「v2」と呼ぶのは `awslabs/aidlc-workflows` の 2.x 系で本書は 2.8.2 であること、「v1」は依頼者と claude 版が用いた呼称で 2.8.2 の一次情報には現れないこと（断定しない。歴史的な説明は claude 版 2.2〜2.3 へリンク）、(3) リポジトリの歩み: 0.1.0（2026-04-24、初回公開、5 フェーズ 32 ステージ、11 エージェント）→ 2.0.0（2026-06-18、レビュアー 2 名の導入で 13 エージェント）→ 2.8.0（ネイティブインストーラへの移行）→ 2.8.2（`CHANGELOG.md`）、(4) 原典の用語（原典では Mob Elaboration などと呼ぶ）は「原典では…と呼ぶ」の形でのみ触れ、2.8.2 の用語と混同させない（Q3）。
+- **FR3.1 2.1 AI-DLC とは何か** — 学習目標: 読者は「AI-DLC」「v2」「v1」という言葉を聞いたとき、それぞれが何を指し得るかを 2.8.2 の一次情報に基づいて位置づけられる。必須内容: (1) AI-DLC は AI 支援開発を反復可能で追跡可能なフェーズに構造化する方法論で、AWS の AI-DLC 方法論（ブログ）に由来し、`awslabs/aidlc-workflows` はそれをハーネス中立のコアから実装したものであること（`docs/guide/00-introduction.md § What is AI-DLC?`）、(2) 本書で「v2」と呼ぶのは `awslabs/aidlc-workflows` の 2.x 系で本書は 2.8.2 であること、「v1」は依頼者と claude 版が用いた呼称で 2.8.2 の一次情報には現れないこと（断定しない。歴史的な説明は claude 版 2.2〜2.3 へリンク）、(3) リポジトリの歩み: 0.1.0（2026-04-24、初回公開、5 フェーズ 32 ステージ、11 エージェント）→ 2.0.0（2026-06-18、レビュアー 2 名の導入で 13 エージェント）→ 2.7.2（2026-09-07、`CHANGELOG.md` でネイティブ `install.sh --version` が初めて案内される。2.7.1 までは `dist/<harness>/` の複製で導入していた）→ 2.8.0（2026-09-08、2.7.x を束ねた最初の baseline。2.8.1 の項が「2.8.0 native install」と呼ぶ）→ 2.8.2（`CHANGELOG.md § [2.7.1]`、`§ [2.7.2]`、`§ [2.8.0]`、`§ [2.8.1]`）。「配布方式の転換点」を一語で言うなら 2.7.2 であり、intent-statement の Initiative Trigger の「2.8.0 で配布方法が変わった」は「2.7.2 で登場し 2.8.0 系が最初にその方式だけで配布された」と正確に書き直す（R-08、A7）、(4) 原典の用語（原典では Mob Elaboration などと呼ぶ）は「原典では…と呼ぶ」の形でのみ触れ、2.8.2 の用語と混同させない（Q3）。
 - **FR3.2 2.2 2.8.2 が定義する用語** — 学習目標: 読者は 5 フェーズ、ステージ、承認ゲート、Unit、Bolt、walking skeleton、mob 実行、監査ログ、を一文ずつ説明できる。必須内容: `docs/guide/glossary.md` と `docs/guide/00-introduction.md § Key Numbers` に基づく定義（フェーズ 5、ステージ 33、エージェント 14 = 11 + 2 + 1、スコープ 11、Depth 3 段階、Test Strategy 3 段階）。「Small Mob, Broad Agents」の設計原則（`.claude/knowledge/aidlc-shared/ai-dlc-principles.md`）。対訳表（NFR7、domain-design で確定）に従った日本語表記。
 
 ### FR4 第 3 部 v2 の仕組み（P4、Must、SM2）
 
 各章は「概念と手順の説明」+「本ワークフローの記録（`[record]`）からの短い抜粋」で構成し、TypeScript のコードは引用せず、関数名・サブコマンド名を出典に書くにとどめる（Q4）。
 
-- **FR4.1 3.1 インストールと設定** — 学習目標: 読者は `install.sh` → `aidlc config` → `aidlc doctor` が何を作り何を検査するかを説明できる。必須内容: ネイティブ `aidlc` コマンドと各ハーネスのランタイム、`--version` による版固定、`aidlc config --harness claude` が作るもの（`.claude/`、`aidlc/`、`.gitignore` のブロック、`CLAUDE.md`）、`aidlc doctor`、Bedrock が配布の既定であり方法論の要件ではないこと、他プロバイダの手順（`docs/guide/01-getting-started.md`、`docs/guide/18-install-and-lifecycle.md`）。
-- **FR4.2 3.2 エンジンとコンダクター** — 学習目標: 読者は「エンジンが次を決め、コンダクターが実行して報告する」往復を、実際のディレクティブを見ながら説明できる。必須内容: `aidlc engine orchestrate next` が返す `load-steering` / `run-stage` / `print` / `ask` / `done` の種別、`report --result` の結果値、`aidlc-state.md` と `Current Stage`、本ワークフローのディレクティブ抜粋（`docs/guide/00-introduction.md § How the Orchestrator Works`、`docs/reference/03-orchestrator.md`、`core/tools/aidlc-orchestrate.ts`）。
+- **FR4.1 3.1 インストールと設定** — 学習目標: 読者は `install.sh` → `aidlc config` → `aidlc doctor` が何を作り何を検査するかを説明できる。必須内容: ネイティブ `aidlc` コマンドと各ハーネスのランタイム、`--version` による版固定、`aidlc config --harness claude` が作るもの（`.claude/`、`aidlc/`、`.gitignore` のブロック、`.claude/CLAUDE.md`。プロジェクトルートに `CLAUDE.md` は作らない。R-04）、`aidlc doctor`、Bedrock が配布の既定であり方法論の要件ではないこと、他プロバイダの手順（`docs/guide/01-getting-started.md`、`docs/guide/18-install-and-lifecycle.md`）。
+- **FR4.2 3.2 エンジンとコンダクター** — 学習目標: 読者は「エンジンが次を決め、コンダクターが実行して報告する」往復を、実際のディレクティブを見ながら説明できる。必須内容: `aidlc engine orchestrate next` が返すディレクティブの種別（`core/tools/aidlc-orchestrate.ts` の kind の全集合: `load-steering` / `run-stage` / `print` / `ask` / `error` / `done` / `invoke-swarm`。本書で読者が目にするのは前 4 つと `done` で、`invoke-swarm` は Team Construction 用と一文で触れる。R-03）、`report --result` の結果値、`aidlc-state.md` と `Current Stage`、本ワークフローのディレクティブ抜粋（`docs/guide/00-introduction.md § How the Orchestrator Works`、`docs/reference/03-orchestrator.md`、`core/tools/aidlc-orchestrate.ts`）。
 - **FR4.3 3.3 フェーズとステージ** — 学習目標: 読者はステージ定義を開いて、誰が主導し何を作り何を消費するかを読み取れる。必須内容: 5 フェーズ 33 ステージの一覧、ステージ定義のフロントマター（`lead_agent`、`mode`、`produces`、`consumes`、`reviewer`、`sensors`）、ステージプロトコルの共通手順（質問ファイルと `[Answer]:`、Consolidated Summary Confirmation、承認ゲート、完了報告）（`docs/guide/04-phases-and-stages.md`、`docs/reference/04-stage-protocol.md`、`core/aidlc-common/stages/`）。
 - **FR4.4 3.4 スコープとコンポーザー** — 学習目標: 読者は自分の作業に合うスコープを選び、合わなければ `compose` でどう調整されるかを説明できる。必須内容: 11 スコープの EXECUTE / SKIP 表、Depth と Test Strategy、自動検出、`compose` の提案と承認ゲート、本ワークフローで `docs-book` カスタムスコープを作った理由（`docs/guide/05-scopes-and-depth.md`、`core/scopes/`、`.claude/tools/data/scope-grid.json`）。
 - **FR4.5 3.5 エージェントと委譲** — 学習目標: 読者は 14 エージェントの役割分担と、inline / subagent / pipeline / mob の 4 つの実行形態を区別できる。必須内容: 11 の専門家 + 2 レビュアー + コンポーザー、4 つの委譲ステージ（2.1 pipeline、2.2 subagent、2.4 mob、3.5 subagent）、レビュアーの advisory / adversarial、寄稿ファイルの `**Collaborator:**` と `AGREE:` / `OBJECT:`（`docs/guide/06-agents.md`、`core/agents/`、本ワークフローの practices-discovery 記録）。
@@ -45,7 +45,7 @@
 ### FR5 第 4 部 ハンズオン（P5、Must、SM1・SM2）
 
 - **FR5.1 4.1 環境準備** — 学習目標: 読者は自分の環境に 2.8.2 を版固定で導入し、`aidlc version` で確認できる。必須内容: 前提（Claude Code をインストールし認証済み、ターミナル、`curl`、`git`、Linux / macOS / WSL）、他の 6 ハーネスの存在（一文）、`install.sh` の逐語コマンドと版固定の手順（ダウンロードして内容を確認 → `--version 2.8.2` → `aidlc version`）、Bedrock 既定の説明と Bedrock を使わない場合の手順、`## つまずきポイント`（root では `install.sh` が拒否する、PATH）。
-- **FR5.2 4.2 最初のワークフロー** — 学習目標: 読者は空のプロジェクトで `aidlc config` → `aidlc doctor` → `/aidlc <説明>` を実行し、最初の質問（intent-capture の質問ファイル）が提示されるところまで到達できる。必須内容: `aidlc config --harness claude` の非対話フラグ、`aidlc doctor` の見方（runtime / hooks 系は必須、provider 系は資格情報が無ければ失敗し得る）、フックの承認と Claude Code の再起動、`/aidlc` の説明文（読者が自分で選ぶ 1 行）、最初の質問ファイルの読み方と回答方法、`## つまずきポイント`（`aidlc doctor` のベースライン不一致、フック未承認）。サンプルアプリは作らない（Q5）。
+- **FR5.2 4.2 最初のワークフロー** — 学習目標: 読者は空のプロジェクトで `aidlc config` → `aidlc doctor` → `/aidlc <説明>` を実行し、最初の質問（intent-capture の質問ファイル）が Claude Code 上で提示されるところまで到達できる（これを本書では SM1 の「最初の承認ゲート」の到達点と読み替える。A8）。必須内容: `aidlc config --harness claude` の非対話フラグ、`aidlc doctor` の見方（runtime / hooks 系は必須、provider 系は資格情報が無ければ失敗し得る）、フックの承認と Claude Code の再起動、`/aidlc` の説明文（読者が自分で選ぶ 1 行）、最初の質問ファイルの読み方と回答方法、`## つまずきポイント`（`aidlc doctor` のベースライン不一致、フック未承認）。サンプルアプリは作らない（Q5）。
 
 ### FR6 第 5 部 ケーススタディ — 本書はどう作られたか（P6、Must、SM2）
 
@@ -64,16 +64,16 @@
 
 ### FR8 スコープ外だが読者を導くもの（P8、Could）
 
-- **FR8.1 チーム導入・他手法比較への導線** — 学習目標: 読者は次に読むべきものを知る。必須内容: claude 版 第 4 部と 2.12 への `.html` リンクと一文の要点のみ。独立した章は作らず、`README.md` または 1.1 の末尾に置く。
+- **FR8.1 チーム導入・他手法比較への導線** — 学習目標: 読者は次に読むべきものを知る。必須内容: claude 版 第 4 部と 2.12 への `.html` リンクと一文の要点のみ。独立した章は作らず、1.1（FR2.1 の必須内容 (6)）の末尾に置く（R-06。読み順 NFR5 の観点で、読者が現在地を掴んだ直後に次を示す）。
 
 ## Non-functional requirements
 
 | ID | 区分 | 要件 | 合否条件（測り方） | 由来 |
 | --- | --- | --- | --- | --- |
-| NFR1 | 再現性（SM1） | 読者がハンズオン章（FR5）の手順だけで、クリーンな環境に 2.8.2 を導入し最初の質問に到達できる | クリーンな一時ディレクトリで、章本文の `bash` フェンスどおりに (1) `install.sh --version 2.8.2` (2) `aidlc version` = `aidlc 2.8.2 (runtime 2.8.2)` (3) 非対話の `aidlc config --harness claude` (4) `aidlc doctor` の runtime / hooks 系が通る（provider 系は失敗を許容） (5) `aidlc engine orchestrate next` が最初の run-stage ディレクティブを返す、の全通過。build-and-test で実施 | intent-statement SM1、team-practices `## Testing Posture` 4 |
+| NFR1 | 再現性（SM1） | 読者がハンズオン章（FR5）の手順だけで、クリーンな環境に 2.8.2 を導入し最初の質問に到達できる | クリーンな一時ディレクトリで、章本文の `bash` フェンスどおりに (1) `install.sh --version 2.8.2` (2) `aidlc version` = `aidlc 2.8.2 (runtime 2.8.2)` (3) 非対話の `aidlc config --harness claude` (4) `aidlc doctor` の runtime / hooks 系が通る（provider 系は失敗を許容） (5) `aidlc engine orchestrate next` が最初の run-stage ディレクティブを返す、の全通過。build-and-test で実施。(5) は「Claude Code 上で最初の質問が提示される」（FR5.2 の到達点）の機械検証できる近似であり、Claude Code 上の提示そのものは code-generation のゲートでコンダクターが同じ手順を Claude Code で辿って代理精読で確認する（R-02） | intent-statement SM1、team-practices `## Testing Posture` 4 |
 | NFR2 | 正確性（SM2） | 教材中の AI-DLC に関する事実記述がすべてタグ `v2.8.2` の一次情報、コミット済みランタイム、または本ワークフローの記録で裏取りされている | 全章に `## 出典` 節があり、各出典行が `[2.8.2]` / `[runtime]` / `[record]` / `[推定]` の書式で、`[2.8.2]` はタグの木、`[runtime]` / `[record]` は作業木に実在する（`check:first` で 0 件の欠落）。未裏取りの断定 0 件（functional-design の章仕様審査、レビュアー、ゲートでの代理精読）。推定は本文「（推定）」と `[推定]` 行が対応する | intent-statement SM2、scope-document「事実の裏取り方式」 |
 | NFR3 | 公開とリンク（SM3） | `/first/` で公開され、ビルドが成功し、教材内のリンクがすべて解決する | `npm run build` が終了コード 0 かつ `_site/first/index.html` が存在、`_site/first/` の HTML に未解決の `.md` リンク 0 件、内部リンクの参照先が `_site/` に実在、公開 URL（`/`、`/claude/`、`/first/`）がリダイレクト追従後に最終ステータス 200、公開サイトで `check:first` の blocking 0 件 | intent-statement SM3、team-practices `## Deployment` |
-| NFR4 | 分量 | 方法論を知らない読者が部の順に読み切れる分量 | 各章の本文（`## 出典` を除く）が 2,000〜6,000 文字、章数が README を除いて 15〜20（本書の計画は 20: FR2.1、FR3.1〜3.2、FR4.1〜4.8、FR5.1〜5.2、FR6.1〜6.3、FR7.1〜7.4）。build-and-test で文字数を計測 | Q8 |
+| NFR4 | 分量 | 方法論を知らない読者が部の順に読み切れる分量 | 章種別ごとに合否条件を分ける。(a) 本文の章（FR2.1、FR3.1〜3.2、FR4.1〜4.8、FR5.1〜5.2、FR6.1〜6.3 の 16 章）は本文（`## 出典` 節とコードフェンスと表を除いた文字数、OQ6）が 2,000〜6,000 文字。(b) 付録（FR7.1〜7.4 の 4 章）は表・箇条書きが本体のため下限を置かず、上限のみ 6,000 文字（表とコードフェンスを含めない）。(c) 章数は README を除いて 15〜20 で、本書の計画は 20（上限）。build-and-test で文字数を計測（R-01） | Q8 |
 | NFR5 | 読み順 | 部の順に読めば前の章の知識だけで読める | 前方参照（後の章を読まないと分からない用語・手順）が 0 件。ゲートでの代理精読と reviewer で確認。用語の初出章は付録 A の対訳表に記録 | Q8 |
 | NFR6 | 前提知識 | 前提は Git と GitHub の基本操作、ターミナル操作、Claude Code の日常利用。AWS の知識と AI 駆動開発の方法論の知識は不要 | `README.md` に前提の表があり、本文中で AWS 固有の知識を前提にする箇所が無い（Bedrock は「既定」として説明し、使わない手順も書く） | intent-statement Target Customer、claude 版 README「想定読者」、Q5 |
 | NFR7 | 言語と表記 | 日本語で書き、固定トークンは英語のまま。表記規則とマスキング規約に従う | team-practices `## Code Style` の閉じた集合（必須節、フェンス言語、引用ラベル、出典行書式、ルート絶対パス禁止、`mermaid` 禁止）を `check:first` で 0 件違反。和欧間スペース等の人手規約はゲートで精読。対訳表に無い訳語の揺れ 0 件 | project.md `## Corrections`、team-practices `## Code Style` |
@@ -98,7 +98,9 @@
 | A3 | `https://y-ohgi.github.io/learn-AI-DLCv2/` の `y-ohgi.com` への転送は依頼者の設定であり、本ワークフロー中に変わらない | 実測（practices-discovery）。完了判定はリダイレクト追従後の最終ステータスで行う | deployment-execution |
 | A4 | honkit 6.2.2 の挙動（未解決リンクでも終了コード 0、`.md` が残る）は執筆中に変わらない | `package-lock.json` で固定。practices-discovery の実測 | build-and-test |
 | A5 | 2.8.2 のドキュメントに無い「v1」の説明は claude 版へのリンクで足りる | Q3 の代理回答。依頼者が後日「v1 の説明を first 版にも書くべき」と判断する可能性がある | 依頼者（後日）。修正は新しいワークフローで扱う |
-| A6 | 章数 20・各章 2,000〜6,000 文字で必須内容を書き切れる | 本要件の必須内容の分量から見積もった。未検証 | functional-design（章仕様で超過が見えたら分割を提案） |
+| A6 | 章数 20・本文の章は 2,000〜6,000 文字で必須内容を書き切れる | 本要件の必須内容の分量から見積もった。未検証。章数は既に NFR4 の上限にあるため、超過が見えても章の分割はしない | functional-design（章仕様で超過が見えたら、必須内容の削減か NFR4 の上限改定をゲートで人（代理）に提案する。R-01） |
+| A7 | 配布方式の転換点は 2.7.2（`install.sh` 初出）で、2.8.0 系がその方式だけで配布された最初の baseline である | `CHANGELOG.md § [2.7.1]`（`dist/` の複製）、`§ [2.7.2]`（`install.sh --version 2.7.2`）、`§ [2.8.0]`、`§ [2.8.1]`（「2.8.0 native install」）で確認。intent-statement の Initiative Trigger の「2.8.0 で配布方法が変わった」はこの精度に直す（R-08） | code-generation（FR3.1 執筆時に CHANGELOG を再確認） |
+| A8 | SM1 の「最初の承認ゲートに到達」は、本書では「intent-capture の最初の質問が Claude Code 上で提示される」と読み替える | 無人環境では質問に答えられずゲートまで進めないため、読者が最初に「止まって判断する」地点である質問の提示を到達点とする。機械検証はディレクティブ発行（NFR1 (5)）で近似する（R-02） | build-and-test（NFR1）と code-generation のゲート（Claude Code 上の提示の代理精読） |
 
 ## Out of scope
 
@@ -116,7 +118,7 @@
 | --- | --- | --- | --- |
 | OQ1 | 方法論の原典（AWS ブログ）の出典表記 | domain-design | 出典節では `[2.8.2] docs/guide/00-introduction.md § What is AI-DLC?`（原典へのリンク元）で引き、原典 URL は 2.1 の本文と付録 C に書く。名前空間 4 種は増やさない |
 | OQ2 | 固定トークンの対訳表（英語トークン → 日本語 → 初出章） | domain-design | FR3.2 の用語を核に作り、付録 A の元にする |
-| OQ3 | 章ファイル名（`docs/<NN-部>/<NN-章>.md` のスラッグ）と `FR{n}.{m}` → 章ファイルパスの対応（traceability の target） | domain-design / units-generation | 部 = `01-context`、`02-concepts`、`03-mechanics`、`04-handson`、`05-case-study`、`99-appendix` を候補とする |
+| OQ3 | 章ファイル名（`docs/<NN-部>/<NN-章>.md` のスラッグ）と `FR{n}.{m}` → 章ファイルパスの対応（traceability の target）、および付録の見出しと `SUMMARY.md` の形 | domain-design / units-generation | 部 = `01-context`、`02-concepts`、`03-mechanics`、`04-handson`、`05-case-study`、`99-appendix` を候補とする。付録は `SUMMARY.md` で `## 付録` + `* [A. 用語集](docs/99-appendix/01-glossary.md)` のように文字を振り、章の `# ` 見出しも `# A. 用語集` とする（claude 版と同形）。`check-first.mjs` の許容集合に「付録は `# <A〜D>. タイトル`」を含める（R-05） |
 | OQ4 | Bolt の区切り（walking skeleton に入れる章、以降の順序） | delivery-planning | Bolt 1 = FR1 + FR2.1 + 検査スクリプト。以降は intent-backlog の risk-first（FR4 → FR5 → FR6 → FR3 → FR7） |
 | OQ5 | `[record]` の抜粋に含める監査シャードのファイル名（ホスト名を含む）の扱い | functional-design（FR4.6、FR6.3） | マスキング規約に従い、ファイル名はそのまま（機械依存だが秘密ではない）、絶対パスは短縮 |
-| OQ6 | NFR4 の文字数計測の方法（全角・半角の数え方、コードブロックの扱い） | build-and-test（`check:first` の実装） | 本文から `## 出典` 節とコードフェンスを除いた文字数（Unicode コードポイント数）で計測 |
+| OQ6 | NFR4 の文字数計測の方法（全角・半角の数え方、コードブロックの扱い） | build-and-test（`check:first` の実装） | 本文から `## 出典` 節・コードフェンス・表（`|` で始まる行）を除いた文字数（Unicode コードポイント数）で計測。付録は上限のみ（NFR4 (b)）（R-01） |
