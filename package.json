@@ -5,10 +5,12 @@
   "description": "AI-DLC v2 を学ぶための教材サイト (HonKit x2 + ランディングページ)",
   "scripts": {
     "build": "node scripts/build-site.mjs",
-    "build:claude": "honkit build claude _site/claude",
-    "build:first": "honkit build first _site/first",
+    "build:claude": "node scripts/build-site.mjs claude",
+    "build:first": "node scripts/build-site.mjs first",
     "serve:claude": "honkit serve claude",
-    "serve:first": "honkit serve first"
+    "serve:first": "honkit serve first",
+    "check:first": "node scripts/check-first.mjs",
+    "check:first:handson": "node scripts/check-first.mjs --handson"
   },
   "devDependencies": {
     "honkit": "^6.0.4"

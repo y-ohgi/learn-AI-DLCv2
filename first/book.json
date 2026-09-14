@@ -1,0 +1,10 @@
+{
+  "title": "AI-DLC v2 をはじめから",
+  "description": "AI-DLC を知らないエンジニアが、AI-DLC v2（awslabs/aidlc-workflows 2.8.2）を概念・仕組み・ハンズオン・制作記録の順に学ぶ教材。AI-DLC 自身で制作した",
+  "author": "learn-AI-DLCv2",
+  "language": "ja",
+  "structure": {
+    "readme": "README.md",
+    "summary": "SUMMARY.md"
+  }
+}

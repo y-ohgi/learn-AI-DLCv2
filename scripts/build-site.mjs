@@ -8,14 +8,17 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const out = resolve(root, "_site");
+// Optional filter: `node scripts/build-site.mjs first` builds only that book (plus the landing page).
+const only = process.argv.slice(2).filter((a) => !a.startsWith("--"));
 
-rmSync(out, { recursive: true, force: true });
+// A filtered build keeps the other book's output in place; a full build starts clean.
+if (only.length === 0) rmSync(out, { recursive: true, force: true });
 mkdirSync(out, { recursive: true });
 
 const books = [
   { dir: "claude", label: "claude edition" },
   { dir: "first", label: "first (AI-DLC v2) edition" },
-];
+].filter(({ dir }) => only.length === 0 || only.includes(dir));
 
 for (const { dir, label } of books) {
   const src = resolve(root, dir);
@@ -24,6 +27,7 @@ for (const { dir, label } of books) {
     continue;
   }
   console.log(`[build-site] building ${label} -> _site/${dir}`);
+  // honkit resolves a relative output path against the BOOK directory, so always pass an absolute one.
   execSync(`npx honkit build "${src}" "${resolve(out, dir)}"`, { stdio: "inherit", cwd: root });
 }
 

@@ -7,10 +7,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
+# Least privilege: the build job only needs to read the repo; the deploy job gets the Pages permissions.
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -33,6 +32,9 @@ jobs:
       - name: Build site (landing + claude/ + first/)
         run: npm run build
 
+      - name: Check first edition (links, sources, chapter format)
+        run: npm run check:first -- --no-external
+
       - name: Upload artifact
         if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
@@ -40,6 +42,9 @@ jobs:
           path: _site
 
   deploy:
+    permissions:
+      pages: write
+      id-token: write
     if: github.event_name != 'pull_request'
     needs: build
     runs-on: ubuntu-latest
