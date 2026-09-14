@@ -2062,3 +2062,207 @@
 **Agent**: aidlc-architect-agent
 
 ---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:53:43Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: 質問ファイルへの回答方法（対話モード）の選択
+**Options**: Guide me,I'll edit the file,Chat
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:53:44Z
+**Event**: QUESTION_ANSWERED
+**Stage**: units-generation
+**Details**: Guide me（コンダクターが依頼者の代理として 1 問ずつ回答し、根拠を明記する）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:53:44Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: Q1. Unit の境界はどの基準で切りますか？
+**Options**: A. 部（第 1〜5 部・付録）を 1 Unit ずつにし、横断の構成要素は「骨格と規約」（BookS,B. 12 コンポーネントをそれぞれ 1 Unit にする（12 Unit）,C. 内容（第 1〜5 部 + 付録）を 1 Unit、横断を 1 Unit の 2 Unit にする,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:53:44Z
+**Event**: QUESTION_ANSWERED
+**Stage**: units-generation
+**Details**: Q1: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:53:44Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: Q2. Unit の粒度と種類（kind）はどうしますか？
+**Options**: A. 内容の 6 Unit（第 1〜5 部、付録）は `spec`（章 Markdown はその場で読,B. すべて `spec`,C. kind を付けない（全 Unit が完全な設計文書の組を要求される）,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:53:44Z
+**Event**: QUESTION_ANSWERED
+**Stage**: units-generation
+**Details**: Q2: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:53:44Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: Q3. Unit 間の依存はどう置きますか？ 独立した Unit の並行作業は許しますか？
+**Options**: A. 依存は「参照する」方向で置く: 内容の 6 Unit → 骨格と規約（章は台帳・対訳表・出典規約,B. 第 1 部 → 第 2 部 → 第 3 部 → 第 4 部 → 第 5 部 → 付録 の一直線に,C. 骨格以外は互いに独立とし、すべて並行可能にする,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:53:44Z
+**Event**: QUESTION_ANSWERED
+**Stage**: units-generation
+**Details**: Q3: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:53:45Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: Q4. Unit 間の統合点（インターフェース）は何ですか？
+**Options**: A. 4 つ。(1) Chapter 台帳（`components.md` の Chapter Led,B. 統合点は `SUMMARY.md` だけ,C. 統合点は定義しない,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:53:45Z
+**Event**: QUESTION_ANSWERED
+**Stage**: units-generation
+**Details**: Q4: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:53:45Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: Q5. 配備の形はどうしますか？
+**Options**: A. すべての Unit は 1 冊の HonKit 教材として一括で配備される（`_site/fir,B. 部ごとに別のブック（別の `/first-part1/` など）として配備する,C. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:53:45Z
+**Event**: QUESTION_ANSWERED
+**Stage**: units-generation
+**Details**: Q5: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:54:07Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: 分解計画の承認: 8 Unit（骨格と規約 packaging / ビルドと検査 library / 第 1〜5 部・付録 spec）、依存は参照方向、並行可、統合点 4 つ、配備は 1 冊一括
+**Options**: Approve Plan,Revise Plan
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:54:07Z
+**Event**: QUESTION_ANSWERED
+**Stage**: units-generation
+**Details**: Approve Plan（代理承認。根拠: Q1〜Q5 の回答と components.md / ADR-001 との整合）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:54:07Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: Does this all look correct before I generate the artifact?
+**Options**: Looks correct,Request changes
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/units-generation-questions.md
+
+---
+
+## Summary Confirmation Recorded
+**Timestamp**: 2026-09-14T01:54:08Z
+**Event**: SUMMARY_CONFIRMATION_RECORDED
+**Stage**: units-generation
+**Details**: Looks correct
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/units-generation-questions.md
+**Questions SHA-256**: 12da56aadbdec96c4d2765d2c018130ff1c280611fa3f0bf7a88ce48b06b1188
+**Hash Scope**: confirmed-content-v1
+**Summary Authorization Id**: a405b47d84aa40ec6c3d63c0e2623f4631692a04c25af8b57600314793026ba5
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:55:52Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/units-generation-questions.md
+**Context**: inception > units-generation > units-generation-questions.md
+**Summary Authorization Id**: a405b47d84aa40ec6c3d63c0e2623f4631692a04c25af8b57600314793026ba5
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T01:55:52Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md
+**Context**: inception > units-generation > unit-of-work.md
+**Summary Authorization Id**: a405b47d84aa40ec6c3d63c0e2623f4631692a04c25af8b57600314793026ba5
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T01:55:52Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work-dependency.md
+**Context**: inception > units-generation > unit-of-work-dependency.md
+**Summary Authorization Id**: a405b47d84aa40ec6c3d63c0e2623f4631692a04c25af8b57600314793026ba5
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T01:55:53Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work-story-map.md
+**Context**: inception > units-generation > unit-of-work-story-map.md
+**Summary Authorization Id**: a405b47d84aa40ec6c3d63c0e2623f4631692a04c25af8b57600314793026ba5
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T01:55:53Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/traceability.json
+**Context**: inception > units-generation > traceability.json
+**Summary Authorization Id**: a405b47d84aa40ec6c3d63c0e2623f4631692a04c25af8b57600314793026ba5
+
+---
+
+## Review Requested
+**Timestamp**: 2026-09-14T01:56:17Z
+**Event**: REVIEW_REQUESTED
+**Stage**: units-generation
+**Reviewer**: aidlc-architecture-reviewer-agent
+**Iteration**: 1
+**Artifact Fingerprint**: sha256:3221dee11f75ab232b2f6abe7777b2a8393e66e5bf72d38a2281b403377bd53a
+**Request Id**: review:a20d7017ac32af7aa436afd3f79022f6
+
+---
