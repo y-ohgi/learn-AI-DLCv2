@@ -1747,3 +1747,253 @@
 **Request Id**: review:60e6da77346bb69580867083f0f73f2c
 
 ---
+
+## Review Completed
+**Timestamp**: 2026-09-14T01:44:12Z
+**Event**: REVIEW_COMPLETED
+**Stage**: domain-design
+**Reviewer**: aidlc-architecture-reviewer-agent
+**Iteration**: 1
+**Verdict**: READY
+**Request Fingerprint**: sha256:8b58eef7d48e88bd8be57aa95364d8daf2d21e66b14e9ef46e28c235b25e44aa
+**Artifact Fingerprint**: sha256:8b58eef7d48e88bd8be57aa95364d8daf2d21e66b14e9ef46e28c235b25e44aa
+**Request Id**: review:60e6da77346bb69580867083f0f73f2c
+**Review Record**: .aidlc-reviews/domain-design/stage/4154c975d46d7b87/1.json
+**Review Record Digest**: sha256:752524d4560e6787efe6be473e13bac3d45305d9da989454d201fd21c6b795f8
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:44:32Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: 学び（learnings）の保存: 候補のうち残すもの、および「次回に向けて追加することはあるか」
+**Options**: c1 コンポーネントの読み替え（components.md に記載済み・保存しない）,c2 inline の支援視点（保存しない）,c3 記録用成果物での mermaid 使用（保存しない）,c4 Bolt 区切りは delivery-planning（保存しない）,Nothing to add,Add a note
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T01:44:32Z
+**Event**: QUESTION_ANSWERED
+**Stage**: domain-design
+**Details**: Keep none (all captured in components.md / decisions.md); Nothing to add
+
+---
+
+## Stage Awaiting Approval
+**Timestamp**: 2026-09-14T01:44:34Z
+**Event**: STAGE_AWAITING_APPROVAL
+**Stage**: domain-design
+
+---
+
+## Gate Rejected
+**Timestamp**: 2026-09-14T01:44:34Z
+**Event**: GATE_REJECTED
+**Stage**: domain-design
+**Feedback**: R-01〜R-09 を取り込む: 各部 → BookShell へ依存を反転、FR7.1/FR7.3 の target を AppendixPart に統一、README を Chapter から外し付録を Part 99 と明記、Term/CommandEntry/TroubleshootingEntry に Chapter への references、付録 B/D の照合先と情報源を宣言、Glossary Seed の出典を名前空間付きにし principles のパスを core/knowledge に修正、LandingPage の変更を概要文とリンクに限定、Glossary 非検査の理由を Rationale に、ADR-005 にセキュリティ上の含意を追記
+
+---
+
+## Stage Revising
+**Timestamp**: 2026-09-14T01:44:34Z
+**Event**: STAGE_REVISING
+**Stage**: domain-design
+**Revision count**: 3
+**Feedback**: R-01〜R-09 を取り込む: 各部 → BookShell へ依存を反転、FR7.1/FR7.3 の target を AppendixPart に統一、README を Chapter から外し付録を Part 99 と明記、Term/CommandEntry/TroubleshootingEntry に Chapter への references、付録 B/D の照合先と情報源を宣言、Glossary Seed の出典を名前空間付きにし principles のパスを core/knowledge に修正、LandingPage の変更を概要文とリンクに限定、Glossary 非検査の理由を Rationale に、ADR-005 にセキュリティ上の含意を追記
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:46:16Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/components.md
+**Context**: inception > domain-design > components.md
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:46:16Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/decisions.md
+**Context**: inception > domain-design > decisions.md
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:46:17Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/traceability.json
+**Context**: inception > domain-design > traceability.json
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Review Requested
+**Timestamp**: 2026-09-14T01:46:17Z
+**Event**: REVIEW_REQUESTED
+**Stage**: domain-design
+**Reviewer**: aidlc-architecture-reviewer-agent
+**Iteration**: 1
+**Artifact Fingerprint**: sha256:8b58eef7d48e88bd8be57aa95364d8daf2d21e66b14e9ef46e28c235b25e44aa
+**Request Id**: review:c5399e07f5d961e77890885244b4186b
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:48:04Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/components.md
+**Context**: inception > domain-design > components.md
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:48:04Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/decisions.md
+**Context**: inception > domain-design > decisions.md
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:48:04Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/traceability.json
+**Context**: inception > domain-design > traceability.json
+**Summary Authorization Id**: aaee0d93430a3ed964b05694b4ba3234b2a594798aadb3d5545e24abb89ee0bb
+
+---
+
+## Error Logged
+**Timestamp**: 2026-09-14T01:48:04Z
+**Event**: ERROR_LOGGED
+**Tool**: aidlc-log
+**Command**: aidlc-log engine log review --stage domain-design --reviewer aidlc-architecture-reviewer-agent --iteration 1
+**Error**: Cannot request review pass 2 for "domain-design" because this stage allows 1 review pass. Do not ask the reviewer again; include the findings in the approval summary for the human.\n{"kind":"ask","ask_type":"guard-recovery","response_route":"execute-remedy","question":"The next action for \"domain-design\" would be refused. Choose one authority-preserving recovery action.","stage":"domain-design","reason_codes":["REVIEW_BUDGET_EXHAUSTED"],"remedies":[{"op":"redo-jump","action":"This stage is mid-revision; the way to restart it cleanly is a redo jump: /aidlc --stage domain-design (your recorded answers survive; you will re-confirm the summary once).","command":"bun .claude/tools/aidlc-orchestrate.ts next --stage domain-design","requiresHuman":true,"executableNow":true}]}
+
+---
+
+## Error Logged
+**Timestamp**: 2026-09-14T01:48:18Z
+**Event**: ERROR_LOGGED
+**Tool**: aidlc-log
+**Command**: aidlc-log engine log review --stage domain-design --reviewer aidlc-architecture-reviewer-agent --iteration 1
+**Error**: Cannot request review pass 2 for "domain-design" because this stage allows 1 review pass. Do not ask the reviewer again; include the findings in the approval summary for the human.\n{"kind":"ask","ask_type":"guard-recovery","response_route":"execute-remedy","question":"The same guard state for \"domain-design\" has refused review-request 2 times. Choose one authority-preserving recovery action.","stage":"domain-design","reason_codes":["REVIEW_BUDGET_EXHAUSTED"],"remedies":[{"op":"redo-jump","action":"This stage is mid-revision; the way to restart it cleanly is a redo jump: /aidlc --stage domain-design (your recorded answers survive; you will re-confirm the summary once).","command":"bun .claude/tools/aidlc-orchestrate.ts next --stage domain-design","requiresHuman":true,"executableNow":true}]}
+
+---
+
+## Stage Jump
+**Timestamp**: 2026-09-14T01:48:48Z
+**Event**: STAGE_JUMPED
+**Direction**: REDO
+**Source**: domain-design
+**Target**: domain-design
+**Scope**: docs-book
+**Details**: REDO jump from domain-design to domain-design (2.6). Scope: docs-book.
+**Source Baseline**: sha256:6f1248f55f47e7eeb2e9ed78f3e28d0ddf6c2ee6cb2f2a8086645ef1983ec8a6
+
+---
+
+## Stage Start
+**Timestamp**: 2026-09-14T01:48:48Z
+**Event**: STAGE_STARTED
+**Stage**: domain-design
+**Agent**: aidlc-architect-agent
+**Source Baseline**: sha256:6f1248f55f47e7eeb2e9ed78f3e28d0ddf6c2ee6cb2f2a8086645ef1983ec8a6
+
+---
+
+## Artifact Reused
+**Timestamp**: 2026-09-14T01:49:05Z
+**Event**: ARTIFACT_REUSED
+**Stage**: domain-design
+**Decision**: keep
+**Artifacts**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/components.md,aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/decisions.md,aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/traceability.json
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T01:49:05Z
+**Event**: DECISION_RECORDED
+**Stage**: domain-design
+**Decision**: Does this all look correct before I generate the artifact?
+**Options**: Looks correct,Request changes
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/domain-design-questions.md
+
+---
+
+## Summary Confirmation Recorded
+**Timestamp**: 2026-09-14T01:49:05Z
+**Event**: SUMMARY_CONFIRMATION_RECORDED
+**Stage**: domain-design
+**Details**: Looks correct
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/domain-design-questions.md
+**Questions SHA-256**: 026710f07a7e795681598c6cd8e51f24d88f6143d6142ca527d9d0b6b4401092
+**Hash Scope**: confirmed-content-v1
+**Summary Authorization Id**: af02210216d834817efd037545c3b5b5c115d35bcb7fcaff7b6cbfffdd367579
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:49:06Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/domain-design-questions.md
+**Context**: inception > domain-design > domain-design-questions.md
+**Summary Authorization Id**: af02210216d834817efd037545c3b5b5c115d35bcb7fcaff7b6cbfffdd367579
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:49:06Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/components.md
+**Context**: inception > domain-design > components.md
+**Summary Authorization Id**: af02210216d834817efd037545c3b5b5c115d35bcb7fcaff7b6cbfffdd367579
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:49:06Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/decisions.md
+**Context**: inception > domain-design > decisions.md
+**Summary Authorization Id**: af02210216d834817efd037545c3b5b5c115d35bcb7fcaff7b6cbfffdd367579
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T01:49:06Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/domain-design/traceability.json
+**Context**: inception > domain-design > traceability.json
+**Summary Authorization Id**: af02210216d834817efd037545c3b5b5c115d35bcb7fcaff7b6cbfffdd367579
+
+---
+
+## Review Requested
+**Timestamp**: 2026-09-14T01:49:06Z
+**Event**: REVIEW_REQUESTED
+**Stage**: domain-design
+**Reviewer**: aidlc-architecture-reviewer-agent
+**Iteration**: 1
+**Artifact Fingerprint**: sha256:0c635f45503397826b2ab263cfe764389bba91ddeaae2bf96f88c52be65653e4
+**Request Id**: review:7e85db9f31c144a97cc6d1f0a836798c
+
+---

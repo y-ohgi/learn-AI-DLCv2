@@ -9,34 +9,28 @@ components:
   - name: BookShell
     summary: HonKit の骨格（README・SUMMARY・book.json・.bookignore）と章の台帳
     behaviour: >
-      SUMMARY.md を唯一の目次とし、部と章の番号・タイトル・ファイルパスを保持する。章ファイルを追加したら同じコミットで SUMMARY.md に載せる。README は対象読者・前提・2.8.2 固定・claude 版との関係・出典の読み方・原典 URL を持つ。.bookignore は .claude と aidlc を除外する。
+      SUMMARY.md を唯一の目次とし、部と章の番号・タイトル・ファイルパスを台帳として保持する。各部は台帳に従って章を書く（部 → BookShell の依存）。SUMMARY.md が章ファイルを列挙するのは HonKit のビルド時解決であり、設計上の呼び出しではない。README.md は章（Chapter）ではなく BookShell 自身のファイルである。章ファイルを追加したら同じコミットで SUMMARY.md に載せる。README は対象読者・前提・2.8.2 固定・claude 版との関係・出典の読み方・原典 URL を持つ。.bookignore は .claude と aidlc を除外する。
     responsibilities:
       - README.md（はじめに）の内容（FR1.1）
       - SUMMARY.md と book.json（language ja）の形（FR1.2）
       - 部と章の台帳（番号・タイトル・パス・対応する FR）
     depends_on:
-      - component: ContextPart
-        interaction: 第 1 部の章を目次に載せる
-        style: sync
-      - component: ConceptsPart
-        interaction: 第 2 部の章を目次に載せる
-        style: sync
-      - component: MechanicsPart
-        interaction: 第 3 部の章を目次に載せる
-        style: sync
-      - component: HandsOnPart
-        interaction: 第 4 部の章を目次に載せる
-        style: sync
-      - component: CaseStudyPart
-        interaction: 第 5 部の章を目次に載せる
-        style: sync
-      - component: AppendixPart
-        interaction: 付録の章を目次に載せる
-        style: sync
       - component: SourceRegister
         interaction: README の「出典の読み方」に名前空間と GitHub URL の組み立て方を書く
         style: sync
     dependents:
+      - component: ContextPart
+        interaction: 台帳の章パス・番号・タイトルに従う
+      - component: ConceptsPart
+        interaction: 台帳の章パス・番号・タイトルに従う
+      - component: MechanicsPart
+        interaction: 台帳の章パス・番号・タイトルに従う
+      - component: HandsOnPart
+        interaction: 台帳の章パス・番号・タイトルに従う
+      - component: CaseStudyPart
+        interaction: 台帳の章パス・番号・タイトルに従う
+      - component: AppendixPart
+        interaction: 台帳の章パス・番号・タイトルに従う
       - component: SiteBuild
         interaction: honkit build の入力
       - component: CheckScript
@@ -61,15 +55,16 @@ components:
     responsibilities:
       - 1.1 の本文（FR2.1）と導線（FR8.1）
     depends_on:
+      - component: BookShell
+        interaction: 章のパス・番号・タイトル（Chapter 台帳）に従い、`# N.M タイトル` を SUMMARY.md と同一にする
+        style: sync
       - component: Glossary
         interaction: 初出の用語を対訳表に従って表記する
         style: sync
       - component: SourceRegister
         interaction: 章末の出典行を書式どおりに書く
         style: sync
-    dependents:
-      - component: BookShell
-        interaction: 目次に載る
+    dependents: []
     external_dependencies:
       - name: claude 版（../claude/）
         kind: other
@@ -84,15 +79,16 @@ components:
       - 2.1 の本文（FR3.1）
       - 2.2 の本文（FR3.2）
     depends_on:
+      - component: BookShell
+        interaction: 章のパス・番号・タイトル（Chapter 台帳）に従い、`# N.M タイトル` を SUMMARY.md と同一にする
+        style: sync
       - component: Glossary
         interaction: 用語の定義と訳語の初出を担う
         style: sync
       - component: SourceRegister
         interaction: 章末の出典行と原典の引き方
         style: sync
-    dependents:
-      - component: BookShell
-        interaction: 目次に載る
+    dependents: []
     external_dependencies:
       - name: AWS AI-DLC ブログ（原典）
         kind: other
@@ -106,15 +102,16 @@ components:
     responsibilities:
       - 3.1〜3.8 の本文（FR4.1〜FR4.8）
     depends_on:
+      - component: BookShell
+        interaction: 章のパス・番号・タイトル（Chapter 台帳）に従い、`# N.M タイトル` を SUMMARY.md と同一にする
+        style: sync
       - component: Glossary
         interaction: 用語の表記
         style: sync
       - component: SourceRegister
         interaction: 出典行と記録抜粋の形式
         style: sync
-    dependents:
-      - component: BookShell
-        interaction: 目次に載る
+    dependents: []
     external_dependencies: []
     entities: []
 
@@ -127,6 +124,9 @@ components:
       - 4.2 の本文と手順（FR5.2）
       - 手順の一つ一つ（HandsOnStep）とその期待出力
     depends_on:
+      - component: BookShell
+        interaction: 章のパス・番号・タイトル（Chapter 台帳）に従い、`# N.M タイトル` を SUMMARY.md と同一にする
+        style: sync
       - component: Glossary
         interaction: 用語の表記
         style: sync
@@ -134,8 +134,6 @@ components:
         interaction: 出典行の形式
         style: sync
     dependents:
-      - component: BookShell
-        interaction: 目次に載る
       - component: AppendixPart
         interaction: つまずきポイントの横断再掲（付録 D）
       - component: CheckScript
@@ -164,26 +162,30 @@ components:
       - 5.1〜5.3 の本文（FR6.1〜FR6.3）
       - 抜粋する記録の選定（形式は SourceRegister に従う）
     depends_on:
+      - component: BookShell
+        interaction: 章のパス・番号・タイトル（Chapter 台帳）に従い、`# N.M タイトル` を SUMMARY.md と同一にする
+        style: sync
       - component: Glossary
         interaction: 用語の表記
         style: sync
       - component: SourceRegister
         interaction: 出典行と記録抜粋（RecordExcerpt）の形式とマスキング
         style: sync
-    dependents:
-      - component: BookShell
-        interaction: 目次に載る
+    dependents: []
     external_dependencies: []
     entities: []
 
   - name: AppendixPart
     summary: 付録 A〜D（用語集・コマンド早見・出典一覧・つまずきポイント）
     behaviour: >
-      用語集は Glossary の Term を表に描く。コマンド早見は aidlc --help / aidlc engine --help と docs/guide/12-cli-commands.md で確認したものだけを載せる。出典一覧は SourceRegister の全 SourceEntry を集約し GitHub URL の組み立て方を示す。つまずきポイントは HandsOnPart の節と本ワークフローの事象を横断再掲する。下限文字数は無い（NFR4 (b)）。
+      用語集は Glossary の Term を表に描く。コマンド早見は aidlc --help / aidlc engine --help と docs/guide/12-cli-commands.md で確認したものだけを載せる。出典一覧は SourceRegister の全 SourceEntry を集約し GitHub URL の組み立て方を示す。つまずきポイントは HandsOnPart の節を再掲し、本ワークフローの事象（root 拒否、ベースライン不一致、gh が無い環境）は SourceRegister の [record] 出典で監査シャードと代理判断の記録を直接引く（CaseStudyPart の本文には依存しない）。付録 B の照合先は aidlc CLI の --help 出力（[runtime]）とタグ v2.8.2 の docs/guide/12-cli-commands.md（[2.8.2]）。下限文字数は無い（NFR4 (b)）。
     responsibilities:
-      - 付録 A〜D の本文（FR7.1〜FR7.4）
+      - 付録 A〜D の章ファイル（FR7.1〜FR7.4）。A は Glossary の Term、C は SourceRegister の SourceEntry を描いたもので、元データの所有者は各コンポーネント
       - コマンド早見の各行（CommandEntry）とつまずきポイントの各行（TroubleshootingEntry）
     depends_on:
+      - component: BookShell
+        interaction: 章のパス・番号・タイトル（Chapter 台帳）に従い、`# N.M タイトル` を SUMMARY.md と同一にする
+        style: sync
       - component: Glossary
         interaction: Term を用語集として描く（付録 A）
         style: sync
@@ -193,17 +195,29 @@ components:
       - component: HandsOnPart
         interaction: つまずきポイントを再掲する（付録 D）
         style: sync
-    dependents:
-      - component: BookShell
-        interaction: 目次に載る
-    external_dependencies: []
+    dependents: []
+    external_dependencies:
+      - name: aidlc CLI の --help 出力（インストール済み 2.8.2）
+        kind: other
+        purpose: 付録 B の照合先（[runtime]）
+      - name: awslabs/aidlc-workflows タグ v2.8.2 の docs/guide/12-cli-commands.md
+        kind: other
+        purpose: 付録 B の照合先（[2.8.2]）
     entities:
       - name: CommandEntry
         identifier: command
         attributes: [command, purpose, verifiedBy, firstChapter]
+        references:
+          - entity: Chapter
+            owned_by: BookShell
+            relationship: firstChapter はそのコマンドが初めて登場する Chapter
       - name: TroubleshootingEntry
         identifier: symptom
         attributes: [symptom, cause, fix, sourceChapter]
+        references:
+          - entity: Chapter
+            owned_by: BookShell
+            relationship: sourceChapter はその事象を扱う Chapter（無い場合は記録 [record] を直接引く）
 
   - name: Glossary
     summary: 対訳表（英語トークン → 表記区分 → 日本語 → 初出章）
@@ -231,6 +245,10 @@ components:
       - name: Term
         identifier: englishToken
         attributes: [englishToken, category, japanese, firstChapter, definitionSource]
+        references:
+          - entity: Chapter
+            owned_by: BookShell
+            relationship: firstChapter はその用語が初めて登場する Chapter
 
   - name: SourceRegister
     summary: 出典行と記録抜粋の仕組み（書式・名前空間・検査・一覧）
@@ -349,7 +367,7 @@ components:
   - name: LandingPage
     summary: site/index.html の first 版概要文（deployment-execution で更新）
     behaviour: >
-      2 冊の概要と両版へのリンクを持つ既存ページ。本ワークフローで変えるのは first 版の概要文と、配布方式の転換点の記述（2.7.2 で install.sh 初出、2.8.0 系が最初の baseline）だけ。
+      2 冊の概要と両版へのリンクを持つ既存ページ。本ワークフローで変えるのは first 版の概要文と両版へのリンクだけで、AI-DLC の事実主張（版の履歴など）は置かず、それらは 2.1（FR3.1）に書いて出典検査の経路に載せる。既存の「2.8.0 で配布方法が変わった」という一文は、事実主張を含まない表現（「first 版は 2.8.2 に基づく」）に置き換える（R-07）。
     responsibilities:
       - first 版の概要文（FR1.3、scope-document「deployment-execution の一部」）
     depends_on: []
@@ -364,12 +382,12 @@ components:
 
 ```mermaid
 graph TD
-  BookShell -->|目次に載せる| ContextPart
-  BookShell -->|目次に載せる| ConceptsPart
-  BookShell -->|目次に載せる| MechanicsPart
-  BookShell -->|目次に載せる| HandsOnPart
-  BookShell -->|目次に載せる| CaseStudyPart
-  BookShell -->|目次に載せる| AppendixPart
+  ContextPart -->|台帳に従う| BookShell
+  ConceptsPart -->|台帳に従う| BookShell
+  MechanicsPart -->|台帳に従う| BookShell
+  HandsOnPart -->|台帳に従う| BookShell
+  CaseStudyPart -->|台帳に従う| BookShell
+  AppendixPart -->|台帳に従う| BookShell
   BookShell -->|出典の読み方| SourceRegister
   ContextPart -->|用語| Glossary
   ContextPart -->|出典行| SourceRegister
@@ -395,25 +413,30 @@ graph TD
 テキスト版（同じ内容）:
 
 ```text
-CheckScript --> SiteBuild --> BookShell --> {ContextPart, ConceptsPart, MechanicsPart,
-                    |                        HandsOnPart, CaseStudyPart, AppendixPart}
-                    +--> LandingPage              |            |
-CheckScript --> BookShell, SourceRegister,        v            v
-                HandsOnPart                   Glossary    SourceRegister
-AppendixPart --> Glossary, SourceRegister, HandsOnPart
+{ContextPart, ConceptsPart, MechanicsPart, HandsOnPart, CaseStudyPart, AppendixPart}
+        |                |                 |
+        v                v                 v
+    BookShell         Glossary        SourceRegister
+        ^                                  ^
+        |                                  |
+    SiteBuild --> LandingPage              |
+        ^                                  |
+        |                                  |
+    CheckScript ---------------------------+---> HandsOnPart（bash フェンス再現）
+AppendixPart --> HandsOnPart（付録 D）
 ```
 
 ## Component Summary
 
 | Component | Purpose | Depends On | Dependents | Entities Owned |
 | --- | --- | --- | --- | --- |
-| BookShell | 骨格と章の台帳 | 内容 6 部、SourceRegister | SiteBuild、CheckScript | Part、Chapter |
-| ContextPart | 第 1 部（1 章） | Glossary、SourceRegister | BookShell | — |
-| ConceptsPart | 第 2 部（2 章） | Glossary、SourceRegister | BookShell | — |
-| MechanicsPart | 第 3 部（8 章） | Glossary、SourceRegister | BookShell | — |
-| HandsOnPart | 第 4 部（2 章） | Glossary、SourceRegister | BookShell、AppendixPart、CheckScript | HandsOnStep |
-| CaseStudyPart | 第 5 部（3 章） | Glossary、SourceRegister | BookShell | — |
-| AppendixPart | 付録 A〜D | Glossary、SourceRegister、HandsOnPart | BookShell | CommandEntry、TroubleshootingEntry |
+| BookShell | 骨格と章の台帳 | SourceRegister | 内容 6 部、SiteBuild、CheckScript | Part、Chapter |
+| ContextPart | 第 1 部（1 章） | BookShell、Glossary、SourceRegister | — | — |
+| ConceptsPart | 第 2 部（2 章） | BookShell、Glossary、SourceRegister | — | — |
+| MechanicsPart | 第 3 部（8 章） | BookShell、Glossary、SourceRegister | — | — |
+| HandsOnPart | 第 4 部（2 章） | BookShell、Glossary、SourceRegister | AppendixPart、CheckScript | HandsOnStep |
+| CaseStudyPart | 第 5 部（3 章） | BookShell、Glossary、SourceRegister | — | — |
+| AppendixPart | 付録 A〜D | BookShell、Glossary、SourceRegister、HandsOnPart | — | CommandEntry、TroubleshootingEntry |
 | Glossary | 対訳表 | — | 内容 6 部 | Term |
 | SourceRegister | 出典と抜粋の仕組み | — | BookShell、内容 6 部、CheckScript | SourceEntry、RecordExcerpt |
 | CheckScript | 検査スクリプト | SiteBuild、BookShell、SourceRegister、HandsOnPart | — | CheckRule |
@@ -427,9 +450,9 @@ AppendixPart --> Glossary, SourceRegister, HandsOnPart
 | Part | BookShell | number | number, title, directory, order | — |
 | Chapter | BookShell | path | path, number, title, partNumber, frId, learningObjectives | Part（各章は 1 つの部に属する） |
 | HandsOnStep | HandsOnPart | stepId | stepId, chapterPath, command, expectedOutput, verifiedIn | Chapter |
-| CommandEntry | AppendixPart | command | command, purpose, verifiedBy, firstChapter | — |
-| TroubleshootingEntry | AppendixPart | symptom | symptom, cause, fix, sourceChapter | — |
-| Term | Glossary | englishToken | englishToken, category, japanese, firstChapter, definitionSource | — |
+| CommandEntry | AppendixPart | command | command, purpose, verifiedBy, firstChapter | Chapter（初出章） |
+| TroubleshootingEntry | AppendixPart | symptom | symptom, cause, fix, sourceChapter | Chapter（扱う章。無ければ `[record]` 直接） |
+| Term | Glossary | englishToken | englishToken, category, japanese, firstChapter, definitionSource | Chapter（初出章） |
 | SourceEntry | SourceRegister | entryId | entryId, chapterPath, namespace, path, position, claim | Chapter |
 | RecordExcerpt | SourceRegister | excerptId | excerptId, chapterPath, recordPath, range, masked | Chapter |
 | CheckRule | CheckScript | ruleId | ruleId, severity, target, description | — |
@@ -443,6 +466,7 @@ AppendixPart --> Glossary, SourceRegister, HandsOnPart
 | ConceptsPart | AWS AI-DLC ブログ（原典） | other | 方法論の原典。URL は 2.1 と付録 C にのみ |
 | HandsOnPart | aidlc 2.8.2 リリース（install.sh） | third-party-api | 読者が実行するインストーラ |
 | HandsOnPart | Claude Code | other | 読者のハーネス |
+| AppendixPart | aidlc CLI `--help` 出力 / タグ v2.8.2 の `docs/guide/12-cli-commands.md` | other | 付録 B の照合先 |
 | SourceRegister | awslabs/aidlc-workflows タグ v2.8.2 | other | `[2.8.2]` の照合先 |
 | CheckScript | Node.js 22 / git / curl | other | 実行環境・タグの木・到達性 |
 | SiteBuild | honkit 6.2.2 / GitHub Actions / GitHub Pages | other | ビルド・CI・公開 |
@@ -451,7 +475,6 @@ AppendixPart --> Glossary, SourceRegister, HandsOnPart
 
 | 章 | ファイル | FR | 部 |
 | --- | --- | --- | --- |
-| はじめに | `README.md` | FR1.1 | — |
 | 1.1 あなたの AI 利用はどこにいるか | `docs/01-context/01-where-you-are.md` | FR2.1、FR8.1 | 第 1 部 |
 | 2.1 AI-DLC とは何か | `docs/02-concepts/01-what-is-aidlc.md` | FR3.1 | 第 2 部 |
 | 2.2 2.8.2 が定義する用語 | `docs/02-concepts/02-terms-in-2-8-2.md` | FR3.2 | 第 2 部 |
@@ -473,28 +496,32 @@ AppendixPart --> Glossary, SourceRegister, HandsOnPart
 | C. 出典一覧 | `docs/99-appendix/03-sources.md` | FR7.3 | 付録 |
 | D. つまずきポイント | `docs/99-appendix/04-troubleshooting.md` | FR7.4 | 付録 |
 
+`README.md`（はじめに、FR1.1）は Chapter ではなく BookShell 自身のファイルで、台帳の外に置く。付録は Part `number` = 99、`directory` = `99-appendix`、`title` = 付録 とする（R-03）。
+
 `SUMMARY.md` の形: `# 目次`、`* [はじめに](README.md)`、`## 第1部 読者の現在地` … `## 第5部 ケーススタディ`、`## 付録`、章は `* [N.M タイトル](docs/…)`、付録は `* [A. 用語集](docs/99-appendix/01-glossary.md)`。付録の章見出しは `# A. 用語集` の形で、`check-first.mjs` の許容集合に含める。
 
 ## Glossary Seed（Glossary の Term の初期値、Q3）
 
+「定義の出典」列は SourceRegister の書式（名前空間 + パス + 位置）で書く。付録 A に写すときはこの列をそのまま出典行にできる（R-06）。
+
 | 英語トークン | 区分 | 日本語表記 | 初出章 | 定義の出典 |
 | --- | --- | --- | --- | --- |
-| AI-DLC | 固有名詞 | AI-DLC（初出で「AI 駆動開発ライフサイクル」と説明） | 1.1 | `docs/guide/00-introduction.md § What is AI-DLC?` |
+| AI-DLC | 固有名詞 | AI-DLC（初出で「AI 駆動開発ライフサイクル」と説明） | 1.1 | `[2.8.2] docs/guide/00-introduction.md § What is AI-DLC?` |
 | HonKit / GitHub Pages / Claude Code / Amazon Bedrock | 固有名詞 | そのまま | README | — |
-| Bolt | 固有名詞 | Bolt | 2.2 | `docs/guide/glossary.md`（Bolt） |
-| Unit | 固有名詞 | Unit | 2.2 | `docs/guide/glossary.md`（Unit of Work） |
-| Intent / Space | 固有名詞 | Intent / Space | 3.1 | `docs/guide/03-spaces-and-intents.md` |
-| walking skeleton | 固有名詞 | walking skeleton（初出で「薄い一本通し」と説明） | 2.2 | `docs/guide/glossary.md` |
-| Initialization / Ideation / Inception / Construction / Operation | 固有名詞 | そのまま | 2.2 | `.claude/knowledge/aidlc-shared/ai-dlc-principles.md § Five-Phase Structure` |
-| stage / phase | 訳す | ステージ / フェーズ | 2.2 | `docs/guide/04-phases-and-stages.md` |
-| scope / depth / test strategy | 訳す | スコープ / 深さ（Depth） / テスト戦略（Test Strategy） | 2.2 | `docs/guide/05-scopes-and-depth.md` |
-| engine / conductor / directive | 訳す | エンジン / コンダクター / ディレクティブ | 3.2 | `docs/guide/00-introduction.md § How the Orchestrator Works` |
-| approval gate / summary confirmation / questions file | 訳す | 承認ゲート / 要約確認 / 質問ファイル | 3.3 | `docs/reference/04-stage-protocol.md` |
-| audit log / audit shard / human presence | 訳す | 監査ログ / 監査シャード / 人間の在席 | 3.6 | `docs/guide/10-state-and-audit.md` |
-| sensor / learnings / rule / memory layers | 訳す | センサー / 学び / ルール / メモリ層 | 3.7 | `docs/guide/09-rules-and-the-learning-loop.md` |
-| harness / reviewer / advisory / adversarial | 訳す | ハーネス / レビュアー / 助言型（advisory） / 対抗型（adversarial） | 3.5 | `docs/guide/06-agents.md` |
-| lead agent / support agent / contribution / hub-and-spoke / mob | 訳す | リード / 支援エージェント / 寄稿 / ハブ&スポーク / mob 実行 | 3.5 | `docs/guide/glossary.md`（Mob execution） |
-| ladder prompt / worktree / compose / composer | 訳す | ラダープロンプト / ワークツリー / compose / コンポーザー | 3.4、3.8 | `docs/guide/05-scopes-and-depth.md`、`docs/guide/glossary.md` |
+| Bolt | 固有名詞 | Bolt | 2.2 | `[2.8.2] docs/guide/glossary.md § Bolt` |
+| Unit | 固有名詞 | Unit | 2.2 | `[2.8.2] docs/guide/glossary.md § Unit of Work` |
+| Intent / Space | 固有名詞 | Intent / Space | 3.1 | `[2.8.2] docs/guide/03-spaces-and-intents.md` |
+| walking skeleton | 固有名詞 | walking skeleton（初出で「薄い一本通し」と説明） | 2.2 | `[2.8.2] docs/guide/glossary.md § walking skeleton` |
+| Initialization / Ideation / Inception / Construction / Operation | 固有名詞 | そのまま | 2.2 | `[2.8.2] core/knowledge/aidlc-shared/ai-dlc-principles.md § Five-Phase Structure` |
+| stage / phase | 訳す | ステージ / フェーズ | 2.2 | `[2.8.2] docs/guide/04-phases-and-stages.md` |
+| scope / depth / test strategy | 訳す | スコープ / 深さ（Depth） / テスト戦略（Test Strategy） | 2.2 | `[2.8.2] docs/guide/05-scopes-and-depth.md` |
+| engine / conductor / directive | 訳す | エンジン / コンダクター / ディレクティブ | 3.2 | `[2.8.2] docs/guide/00-introduction.md § How the Orchestrator Works` |
+| approval gate / summary confirmation / questions file | 訳す | 承認ゲート / 要約確認 / 質問ファイル | 3.3 | `[2.8.2] docs/reference/04-stage-protocol.md` |
+| audit log / audit shard / human presence | 訳す | 監査ログ / 監査シャード / 人間の在席 | 3.6 | `[2.8.2] docs/guide/10-state-and-audit.md` |
+| sensor / learnings / rule / memory layers | 訳す | センサー / 学び / ルール / メモリ層 | 3.7 | `[2.8.2] docs/guide/09-rules-and-the-learning-loop.md` |
+| harness / reviewer / advisory / adversarial | 訳す | ハーネス / レビュアー / 助言型（advisory） / 対抗型（adversarial） | 3.5 | `[2.8.2] docs/guide/06-agents.md` |
+| lead agent / support agent / contribution / hub-and-spoke / mob | 訳す | リード / 支援エージェント / 寄稿 / ハブ&スポーク / mob 実行 | 3.5 | `[2.8.2] docs/guide/glossary.md § Mob execution` |
+| ladder prompt / worktree / compose / composer | 訳す | ラダープロンプト / ワークツリー / compose / コンポーザー | 3.4、3.8 | `[2.8.2] docs/guide/05-scopes-and-depth.md`、`[2.8.2] docs/guide/glossary.md § ladder prompt` |
 | primary source / record / traceability | 訳す | 一次情報 / 記録 / トレーサビリティ | README | — |
 | コマンド・フラグ・パス・slug・イベント名・状態フィールド・スコープ名・YAML キー・判定値・ディレクティブ種別 | コードスパン | 英語のまま | 各章 | — |
 
@@ -502,10 +529,10 @@ AppendixPart --> Glossary, SourceRegister, HandsOnPart
 
 | Component | なぜ独立したまとまりか | Alternatives Rejected |
 | --- | --- | --- |
-| BookShell | 目次と設定は全章に先立ち、walking skeleton の中核。変更率が低く、検査（SUMMARY と章の一致）の対象 | 各部が自分の目次断片を持つ案（HonKit は単一 SUMMARY.md しか読まない） |
+| BookShell | 目次と設定は全章に先立ち、walking skeleton の中核。各部は台帳（章パス・番号・タイトル）に従うので依存は部 → BookShell の一方向（R-01）。SUMMARY.md の章列挙はビルド時解決で設計上の呼び出しではない。変更率が低く、検査（SUMMARY と章の一致）の対象 | 各部が自分の目次断片を持つ案（HonKit は単一 SUMMARY.md しか読まない）、BookShell → 各部の向き（部が台帳に従う義務が隠れ、宣言すると循環する） |
 | ContextPart〜CaseStudyPart（5 部） | 部 = intent-backlog のプロト Unit = requirements の FR{n}。執筆順序（risk-first）と Bolt の区切りが部単位 | 章単位（20 個の依存管理に見合う利点が無い）、全体 1 個（walking skeleton を切り出せない） |
 | AppendixPart | 他部の完成後に集約する性質（対訳表・出典一覧・つまずき再掲）で、変更率と依存方向が本文の部と異なる | 各部の末尾に付録相当を分散（読者が引けない） |
-| Glossary | 全部が同じ表に従う必要があり、所有者が 1 つでないと訳語が揺れる（NFR7） | 各部で訳語を決める案 |
+| Glossary | 全部が同じ表に従う必要があり、所有者が 1 つでないと訳語が揺れる（NFR7）。対訳表への準拠は人手規約としてゲートで精読する（`check-first.mjs` は検査しない）。理由: 和文中の訳語の揺れは表記の文脈依存（複合語の例外）を含み、機械照合の偽陽性が多い。付録 A の表と本文の突合を advisory 検査にできるかは functional-design で検討する（R-08） | 各部で訳語を決める案、CheckScript による blocking 検査（偽陽性） |
 | SourceRegister | 出典行の書式・名前空間・検査・一覧は 1 か所で決めないと `check-first.mjs` の許容集合が定まらない（Q5） | 各部が形式を決める案、付録 C のみに集約する案（承認済み慣行に反する） |
 | CheckScript | 検査は「テストランナー」に相当し、walking skeleton に含める。内容の部と変更率が異なる | 外部リンタ導入（Q13 で不採用）、CI のみで検査（ローカル再現不可） |
 | SiteBuild | 既存資産で変更は 2 点まで。内容と独立に動く | first 版専用のワークフロー（禁止事項） |

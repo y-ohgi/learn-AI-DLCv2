@@ -12,7 +12,7 @@
 ## ADR-002: 章の台帳（Part / Chapter）は BookShell が所有し、各部は内容だけを持つ
 
 - **Context** — HonKit は単一の `SUMMARY.md` だけを目次として読み、`SUMMARY.md` に無い章はビルドされない（practices-discovery の実測）。章のパス・番号・タイトル・対応 FR は検査（`SUMMARY.md` と `docs/**/*.md` の一致、FR → 章ファイルの traceability）の鍵になる。
-- **Decision** — Part と Chapter のエンティティは BookShell が所有し、章ファイル名 20 本と付録の見出し形を `components.md` の Chapter Ledger で固定する（Q2、OQ3）。各部は自分の章の本文と手順だけを持つ。
+- **Decision** — Part と Chapter のエンティティは BookShell が所有し、章ファイル名 20 本と付録の見出し形を `components.md` の Chapter Ledger で固定する（Q2、OQ3）。各部は台帳に従って自分の章の本文と手順だけを持つ（依存は部 → BookShell の一方向。R-01）。README.md は Chapter ではなく BookShell 自身のファイル（R-03）。付録の章ファイル（A〜D）は AppendixPart が書き、Glossary と SourceRegister は元データの所有者に留まる（traceability の FR7.1 / FR7.3 の target は AppendixPart。R-02）。
 - **Consequences** — 章を追加・改名するときは BookShell（`SUMMARY.md` と台帳）を同じコミットで更新する義務が生じる。traceability の target は台帳のファイルパスで決まる。付録の見出し `# <A〜D>. タイトル` を `check-first.mjs` の許容集合に加える。
 - **Alternatives Rejected** — 各部が自分の目次断片を持つ案: HonKit の制約で成立しない。章ファイル名を日本語にする案: URL のパーセントエンコードと検査の複雑化。執筆時に各章で決める案: traceability の target が Units Generation 時点で定まらない。
 
@@ -35,4 +35,5 @@
 - **Context** — team-practices.md は検査を `scripts/check-first.mjs`（依存追加なし）に集約し、walking skeleton に含めると定めた。公開経路は既存の `deploy.yml` と `build-site.mjs` で、変更は 2 点（検査ステップ追加、`permissions` のジョブ単位化）まで。検査はビルド出力（`_site/`）と章ファイルと出典の照合先（タグ `v2.8.2` の木）を入力にする。
 - **Decision** — CheckScript（規則 CheckRule を所有）と SiteBuild（BuildTarget を所有）を内容の部から分離し、CheckScript → SiteBuild → BookShell の一方向の依存にする。LandingPage は SiteBuild の入力として独立させ、変更は deployment-execution の概要文更新に限る。
 - **Consequences** — 章の変更は検査の再実行だけを要求し、検査規則の変更は章に影響しない。ハンズオン再現（NFR1）は CheckScript の別モードとして HandsOnPart の bash フェンスを抽出する。依存グラフは非循環。
+- **セキュリティ上の含意（Inception 規則、R-09）** — (1) `deploy.yml` の `permissions` をジョブ単位に縮め、`build` ジョブから `pages: write` / `id-token: write` を外す（PR で走るジョブが公開権限を持たない）。(2) 記録抜粋（RecordExcerpt）はマスキング規約（アカウント ID・ARN・トークン・メールアドレスを除き、絶対パスを短縮）を適用してから章に載せる。(3) HandsOnPart が読者に実行させる外部スクリプト `install.sh` は、逐語コマンドに加えて「ダウンロードして内容を確認 → `--version 2.8.2` で固定 → `aidlc version` で検証」を併記し、`sudo` を付けない・HTTPS のみ・ホスト名の確認を一文で添える。(4) CheckScript は依存パッケージを追加せず（サプライチェーン表面を増やさない）、外部 URL の到達性は advisory に留める。教材自体に秘密情報は含まれず、公開物は静的 HTML のみ。
 - **Alternatives Rejected** — 外部リンタの導入（practices-discovery Q13 で不採用）。CI だけで検査（ローカルで再現できず、Bolt ごとのゲートで確認できない）。first 版専用のワークフロー（禁止事項）。

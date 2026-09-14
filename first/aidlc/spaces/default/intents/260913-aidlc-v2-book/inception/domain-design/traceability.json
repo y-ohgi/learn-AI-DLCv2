@@ -168,7 +168,7 @@
     {
       "id": "FR7.1",
       "status": "OK",
-      "target": "Glossary"
+      "target": "AppendixPart"
     },
     {
       "id": "FR7.2",
@@ -178,7 +178,7 @@
     {
       "id": "FR7.3",
       "status": "OK",
-      "target": "SourceRegister"
+      "target": "AppendixPart"
     },
     {
       "id": "FR7.4",
