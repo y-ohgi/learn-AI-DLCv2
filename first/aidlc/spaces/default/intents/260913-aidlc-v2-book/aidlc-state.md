@@ -7,7 +7,7 @@
 - **Scope**: docs-book
 - **Start Date**: 2026-09-13T13:01:37Z
 - **State Version**: 8
-- **Active Agent**: aidlc-delivery-agent
+- **Active Agent**: aidlc-architect-agent
 - **Worktree Path**:
 - **Bolt Refs**:
 - **Practices Affirmed Timestamp**: 2026-09-13T14:13:54Z
@@ -28,19 +28,23 @@
 
 ## Execution Plan Summary
 - **Total Stages**: 14
-- **Completed**: 9
-- **In Progress**: delivery-planning
+- **Completed**: 10
+- **In Progress**: functional-design
 
 ## Runtime State
 - **Revision Count**: 3
+
+- **Construction Iteration**: unit-major
+
+- **Unit Ownership**: solo
 
 ## Phase Progress
 <!-- Status values: Pending, Active, Verified, Skipped -->
 
 - **Initialization**: Verified
 - **Ideation**: Verified
-- **Inception**: Active
-- **Construction**: Pending
+- **Inception**: Verified
+- **Construction**: Active
 - **Operation**: Pending
 
 ## Stage Progress
@@ -69,11 +73,11 @@
 - [x] domain-design — EXECUTE
 - [x] units-generation — EXECUTE
 - [ ] contract-design — SKIP
-- [-] delivery-planning — EXECUTE
+- [x] delivery-planning — EXECUTE
 
 ### CONSTRUCTION PHASE
 Per unit: [TBD]
-- [ ] functional-design — EXECUTE
+- [-] functional-design — EXECUTE
 - [ ] nfr-requirements — SKIP
 - [ ] nfr-design — SKIP
 - [ ] infrastructure-design — SKIP
@@ -91,13 +95,13 @@ Per unit: [TBD]
 - [ ] feedback-optimization — SKIP
 
 ## Current Status
-- **Lifecycle Phase**: INCEPTION
-- **Current Stage**: delivery-planning
-- **Next Stage**: functional-design
+- **Lifecycle Phase**: CONSTRUCTION
+- **Current Stage**: functional-design
+- **Next Stage**: code-generation
 - **Status**: Running
-- **Last Updated**: 2026-09-14T02:00:06Z
+- **Last Updated**: 2026-09-14T02:04:06Z
 
 ## Session Resume Point
-- **Last Completed Stage**: units-generation
-- **Next Action**: Execute Delivery Planning
+- **Last Completed Stage**: delivery-planning
+- **Next Action**: Execute Functional Design
 - **Pending Artifacts**: none

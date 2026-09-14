@@ -2331,3 +2331,329 @@
 **Agent**: aidlc-delivery-agent
 
 ---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:00:37Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: 質問ファイルへの回答方法（対話モード）の選択
+**Options**: Guide me,I'll edit the file,Chat
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:00:37Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Guide me（コンダクターが依頼者の代理として 1 問ずつ回答し、根拠を明記する）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:00:37Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Q1. 何を最初に作りますか？ 薄い一本通し（walking skeleton: 目次と設定・検査スクリプト・章 1 本を `_site/first/` のビルドと検査まで通す最小版）を先に作り、その後はどの基準で並べますか？
+**Options**: A. 最初の Bolt を walking skeleton（U1 骨格と規約 + U2 ビルドと検査,B. 価値の高い順（U6 ハンズオン → U5 仕組み → …）。依存を満たすために U4・U5 を先,C. 目次の順（U3 → U4 → U5 → U6 → U7 → U8）で、walking skele,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:00:37Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Q1: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:00:38Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Q2. 作業を点数で並べる正式なモデル（WSJF のような「価値 + 緊急度 + リスク低減 ÷ 大きさ」）を使いますか？
+**Options**: A. 使わない。順序は「依存関係を満たす → 事実誤りのリスクが高いものを先に → 付録は最後」の 3,B. WSJF で点数を付け、リスクに最も重みを置く,C. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:00:38Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Q2: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:00:38Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Q3. 1 つの Bolt の大きさはどうしますか？
+**Options**: A. 最初の Bolt だけ 3 Unit（U1 + U2 + U3）を束ね、以後は 1 Bolt =,B. すべて 1 Bolt = 1 Unit（U1、U2、U3 も別々の Bolt。計 8 Bolt）,C. 2 Bolt（骨格 + 第 1〜2 部、第 3〜5 部 + 付録）,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:00:38Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Q3: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:00:38Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Q4. 複数の Bolt を同時に進めますか？
+**Options**: A. 進めない。1 つのセッション（コンダクター）が 1 Bolt ずつ、Bolt ごとにゲートで精読,B. 依存の無い Unit は並行に進める,C. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:00:38Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Q4: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:00:38Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Q5. チームの外にある、進行を止め得るものは何ですか？（所有者・所要時間・止める Bolt・遅れたときの手）
+**Options**: A. 4 つ。(1) aidlc 2.8.2 のリリース配布（GitHub Releases の `i,B. 外部依存は無い,C. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:00:39Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Q5: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:00:39Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Q6. この制作でいちばん心配なことは何ですか？（早めに手を打つために）
+**Options**: A. AI-DLC の事実の誤り（第 3 部・第 4 部）。2.8.2 の一次情報で裏取りしていない断,B. 分量が多すぎて読まれないこと,C. 公開が失敗すること,D. Not yet defined,X. Other (please specify)
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:00:39Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Q6: A（代理回答。根拠は質問ファイルの当該設問末尾）
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:01:00Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Does this all look correct before I generate the artifact?
+**Options**: Looks correct,Request changes
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/delivery-planning/delivery-planning-questions.md
+
+---
+
+## Summary Confirmation Recorded
+**Timestamp**: 2026-09-14T02:01:00Z
+**Event**: SUMMARY_CONFIRMATION_RECORDED
+**Stage**: delivery-planning
+**Details**: Looks correct
+**Checkpoint**: Consolidated Summary Confirmation
+**Questions File**: aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/delivery-planning/delivery-planning-questions.md
+**Questions SHA-256**: f21a3ca14d4353e2cabd3339b45e88fde210d9f7e9a166ed9d582baf0ade2a7e
+**Hash Scope**: confirmed-content-v1
+**Summary Authorization Id**: dad20e8d2bbc72f1b22e77930603b5963ceb50a45b5a4269ac45bb5a75ce5d30
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T02:03:20Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/delivery-planning/delivery-planning-questions.md
+**Context**: inception > delivery-planning > delivery-planning-questions.md
+**Summary Authorization Id**: dad20e8d2bbc72f1b22e77930603b5963ceb50a45b5a4269ac45bb5a75ce5d30
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T02:03:20Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/delivery-planning/bolt-plan.md
+**Context**: inception > delivery-planning > bolt-plan.md
+**Summary Authorization Id**: dad20e8d2bbc72f1b22e77930603b5963ceb50a45b5a4269ac45bb5a75ce5d30
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T02:03:20Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/delivery-planning/team-allocation.md
+**Context**: inception > delivery-planning > team-allocation.md
+**Summary Authorization Id**: dad20e8d2bbc72f1b22e77930603b5963ceb50a45b5a4269ac45bb5a75ce5d30
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T02:03:20Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/delivery-planning/risk-and-sequencing-rationale.md
+**Context**: inception > delivery-planning > risk-and-sequencing-rationale.md
+**Summary Authorization Id**: dad20e8d2bbc72f1b22e77930603b5963ceb50a45b5a4269ac45bb5a75ce5d30
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T02:03:20Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/delivery-planning/external-dependency-map.md
+**Context**: inception > delivery-planning > external-dependency-map.md
+**Summary Authorization Id**: dad20e8d2bbc72f1b22e77930603b5963ceb50a45b5a4269ac45bb5a75ce5d30
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-14T02:03:21Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/verification/phase-check-inception.md
+**Context**: verification > phase-check-inception.md
+
+---
+
+## Unit Ownership Set
+**Timestamp**: 2026-09-14T02:03:21Z
+**Event**: UNIT_OWNERSHIP_SET
+**Mode**: solo
+
+---
+
+## Artifact Updated
+**Timestamp**: 2026-09-14T02:04:02Z
+**Event**: ARTIFACT_UPDATED
+**Tool**: Edit
+**File**: <project-dir>/aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/delivery-planning/external-dependency-map.md
+**Context**: inception > delivery-planning > external-dependency-map.md
+**Summary Authorization Id**: dad20e8d2bbc72f1b22e77930603b5963ceb50a45b5a4269ac45bb5a75ce5d30
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:04:02Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Construction の進め方: Unit ごとに設計と執筆を続けて行い次の Unit へ進む（unit-major）か、設計ステージを全 Unit で済ませてから執筆する（stage-major）か
+**Options**: Unit ごとに設計して執筆（unit-major）,ステージごとに全 Unit（stage-major）
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:04:02Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Unit ごとに設計して執筆（unit-major）。根拠: walking skeleton（Bolt 1）が先に動くこと、team.md の gate every Bolt
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:04:03Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: Construction の体制: すべての Unit をこのセッションで 1 つずつ作り代理で承認するか、複数チームが Unit を分担するか
+**Options**: このセッションで 1 つずつ（solo）,複数チームで分担（team）
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:04:03Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: このセッションで 1 つずつ（solo）。根拠: Team Formation は SKIP、作業者はコンダクター 1 セッション
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:04:03Z
+**Event**: DECISION_RECORDED
+**Stage**: delivery-planning
+**Decision**: 学び（learnings）の保存: 候補のうち残すもの、および「次回に向けて追加することはあるか」
+**Options**: c1 Bolt 構成（bolt-plan に記載済み・保存しない）,c2 unit-major / solo（状態に記録済み・保存しない）,c3 センサー偽陰性の受容（保存しない）,Nothing to add,Add a note
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:04:03Z
+**Event**: QUESTION_ANSWERED
+**Stage**: delivery-planning
+**Details**: Keep none; Nothing to add
+
+---
+
+## Stage Awaiting Approval
+**Timestamp**: 2026-09-14T02:04:05Z
+**Event**: STAGE_AWAITING_APPROVAL
+**Stage**: delivery-planning
+
+---
+
+## Gate Approved
+**Timestamp**: 2026-09-14T02:04:06Z
+**Event**: GATE_APPROVED
+**Stage**: delivery-planning
+**User Input**: Approve
+
+---
+
+## Stage Completion
+**Timestamp**: 2026-09-14T02:04:06Z
+**Event**: STAGE_COMPLETED
+**Stage**: delivery-planning
+**Validation Basis**: {"graphContract":"sha256:a107b7327c50c8716649b92e85898e6621eb07b7364abb8cf88794d8672f5550","inputs":[{"artifact":"components","contentHash":"sha256:ee4709ffe3f953d490edccbb34b80f432542cdc1745e6f981a6929961b1870c2","instanceCount":1,"presentCount":1,"producer":"domain-design","required":true,"structureHash":"sha256:30634bb570c25fbd8e5ef176b4deb907e489111c5dbaaa4b3686c21fe8e56c03"},{"artifact":"requirements","contentHash":"sha256:3cf10d7b43b56302e7ca0bc4082289a6224bbc6bce2dc8f22a269dc447ab12e7","instanceCount":1,"presentCount":1,"producer":"requirements-analysis","required":true,"structureHash":"sha256:57f784bc245237e9f047e55ac3659c6db2357f22448c8e260fc1cb249a5028a9"},{"artifact":"team-practices","contentHash":"sha256:aabfbbba50eea5103f04b787e908476869043ff836da7f09c2eccc270b59d755","instanceCount":1,"presentCount":1,"producer":"practices-discovery","required":false,"structureHash":"sha256:692826ca08abb39743dabc39bb0499e54133979a60eb527772fcfdd1a097251b"},{"artifact":"unit-of-work-dependency","contentHash":"sha256:0531a79890168b17140ae1cc1e2a425f7e22d552731ab895f08940b89b3414c4","instanceCount":1,"presentCount":1,"producer":"units-generation","required":true,"structureHash":"sha256:e52b2101d93d5dacfee036d575c9063160d9e4cc1a9c1c5f9a66c1533cc1d318"},{"artifact":"unit-of-work-story-map","contentHash":"sha256:b076705685ec0a94d120bd35b93e4f160739afda16ae17362de027f2bb90dd17","instanceCount":1,"presentCount":1,"producer":"units-generation","required":false,"structureHash":"sha256:abd3aaa9f124b6dec8601ad8c24cd24b79f0f896377580a198dc08dcef263970"},{"artifact":"unit-of-work","contentHash":"sha256:00a8435626fd8abce6135febdcce15497fc0c84e8b322111b42b6a14a5ef70fb","instanceCount":1,"presentCount":1,"producer":"units-generation","required":true,"structureHash":"sha256:03788b4ce282b8b4c1342f9281369c864096ba9ff7c580c468f0fe212ad61985"}],"outputs":[{"artifact":"bolt-plan","contentHash":"sha256:faa402590a8a8c22da2c68ae21b7e4964e271bc642013586b01862b35e72b6e0","instanceCount":1,"presentCount":1,"producer":"delivery-planning","required":true,"structureHash":"sha256:1eca2f1145be32ae83acdaaa6519d2a07e218c74498e6da588187c0ce28b2f0c"},{"artifact":"delivery-planning-questions","contentHash":"sha256:a01f81433daa63a3b0c38812842cd23f83d3c6be5e045887ce0d77d2d38abebf","instanceCount":1,"presentCount":1,"producer":"delivery-planning","required":true,"structureHash":"sha256:59e96b70090fbf823cf74669a648956185dc5064fa7e668349d1711bbf5dfe6b"},{"artifact":"external-dependency-map","contentHash":"sha256:bdfcbf39580cec8f653d9388bcaaecbaaffe26db7ff12fb0966e3f60eaffe261","instanceCount":1,"presentCount":1,"producer":"delivery-planning","required":true,"structureHash":"sha256:67c7f6c948c7788e0ca65f97a0ed3f5a2248db858d51ddf6f93b87f0324a2d1d"},{"artifact":"risk-and-sequencing-rationale","contentHash":"sha256:c235efa5047794d5ab5add5bf482ee5e30a31a19c64b230497124429365b934f","instanceCount":1,"presentCount":1,"producer":"delivery-planning","required":true,"structureHash":"sha256:48c19dfd13b4622208becbabf1b79ec3f701e239a48b1f329d3da7fd72a283ea"},{"artifact":"team-allocation","contentHash":"sha256:edc32f4cc606b23914c4c9e19cbc0ccba4584d1236485d9672bf13fd91df545d","instanceCount":1,"presentCount":1,"producer":"delivery-planning","required":true,"structureHash":"sha256:10ab0f6a2e50527a274aa2c80a6a487cc7942520f4c26fd11aae5760aad7e815"}],"projectType":"greenfield","schema":3}
+**Details**: Stage Delivery Planning approved by gate
+
+---
+
+## Phase Completion
+**Timestamp**: 2026-09-14T02:04:06Z
+**Event**: PHASE_COMPLETED
+**From phase**: inception
+**To phase**: construction
+**Stages completed**: 10
+
+---
+
+## Phase Verification
+**Timestamp**: 2026-09-14T02:04:06Z
+**Event**: PHASE_VERIFIED
+**Phase boundary**: inception → construction
+
+---
+
+## Phase Start
+**Timestamp**: 2026-09-14T02:04:06Z
+**Event**: PHASE_STARTED
+**Phase**: construction
+**Scope**: docs-book
+
+---
+
+## Stage Start
+**Timestamp**: 2026-09-14T02:04:06Z
+**Event**: STAGE_STARTED
+**Stage**: functional-design
+**Agent**: aidlc-architect-agent
+
+---
