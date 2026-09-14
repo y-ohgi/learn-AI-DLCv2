@@ -38,6 +38,16 @@
 
 - **Unit Ownership**: solo
 
+- **Skeleton Stance**: scope-dependent
+
+- **Active Unit**: u1-book-shell
+
+- **Unit State**: paused
+
+- **Unit Pause Reason**: Plan Approval の受領は人がハーネスに入力した回答をフックが記録して初めて成立し、無人セッションでは得られない（answer は refused）
+
+- **Unit Next Action**: 依頼者の代理判断により、計画どおりの執筆をエンジンの生成権限の外で行い、記録の memory.md とケーススタディに逸脱として記す。人が Approve Plan を入力できる環境になれば unit resume して受領を取り直す
+
 ## Phase Progress
 <!-- Status values: Pending, Active, Verified, Skipped -->
 
@@ -99,7 +109,7 @@ Per unit: [TBD]
 - **Current Stage**: functional-design
 - **Next Stage**: code-generation
 - **Status**: Running
-- **Last Updated**: 2026-09-14T02:04:06Z
+- **Last Updated**: 2026-09-14T02:10:41Z
 
 ## Session Resume Point
 - **Last Completed Stage**: delivery-planning
