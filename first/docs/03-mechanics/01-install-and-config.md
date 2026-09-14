@@ -134,6 +134,5 @@ Bedrock を使う場合は、モデルアクセスの有効化、`aws configure`
 - [runtime] `first/.claude/settings.json` hooks — PreToolUse / PostToolUse / UserPromptSubmit / SessionStart / Stop 等で `aidlc engine hook <name>` を呼ぶ配線
 - [runtime] `first/.claude/settings.json` permissions — Read / Edit / Write / Glob / Grep / Task / WebSearch と `Bash(aidlc engine *)` の事前承認
 - [runtime] `first/.claude/CLAUDE.md` § Prerequisites — 指示ファイルが `.claude/` 直下にあること、フック承認後に Claude Code を完全に再起動し `/clear` では足りないこと
-- [runtime] `first/.gitignore` `# BEGIN AI-DLC:gitignore` — AI-DLC ブロックの実物
 - [record] `first/aidlc/spaces/default/memory/team.md` § Testing Posture — `aidlc version` の期待出力 `aidlc 2.8.2 (runtime 2.8.2)`
 - [record] `first/aidlc/spaces/default/intents/260913-aidlc-v2-book/aidlc-state.md` § Project Information — 抜粋した状態ファイルの冒頭

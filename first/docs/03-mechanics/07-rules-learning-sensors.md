@@ -94,13 +94,14 @@ aidlc/spaces/<space>/memory/
 - [2.8.2] `docs/guide/09-rules-and-the-learning-loop.md` § Applies next workflow, not mid-run — 学びが次のワークフローから効くこと
 - [2.8.2] `docs/guide/09-rules-and-the-learning-loop.md` § Sensors: the deterministic second opinion — ルールとセンサーの対比、write 時の PostToolUse フック、advisory の意味、同梱 6 センサーの一覧
 - [2.8.2] `docs/reference/08-rule-system.md` § Filename-derived scope — ファイル名から層が導かれる表
-- [2.8.2] `docs/reference/08-rule-system.md` § Strict-additive runtime model — すべての適用ルールが文脈に現れること、ステージ層が予約であること、§13 の矛盾照合とpractices-discovery の決定論的な置き換え
+- [2.8.2] `docs/reference/08-rule-system.md` § Strict-additive runtime model — すべての適用ルールが文脈に現れること、ステージ層が予約であること、§13 の矛盾照合と practices-discovery の決定論的な置き換え
 - [2.8.2] `core/aidlc-common/stages/inception/practices-discovery.md` § Step 7: Promote (On Approve Only) — `practices-promote` が識別行を再検証し、`team.md` の 5 節を置き換え、`project.md` の `## Mandated` / `## Forbidden` に追記し、`PRACTICES_AFFIRMED` を刻むこと、失敗時に承認が成立しないこと
 - [2.8.2] `core/aidlc-common/protocols/stage-protocol.md` § 13. Learnings Ritual — 儀式の位置（完了メッセージの後・ゲートの前）、`memory.md` の 4 見出し、`learnings surface` / `learnings persist`、必須の追加質問、見出しの振り分け、矛盾照合、`- <text> (learned YYYY-MM-DD) <!-- cid:… -->` の形と cid の構成、`RULE_LEARNED` / `SENSOR_PROPOSED`、ルールファイルを直接編集しないこと、センサーの 2 書き込み
 - [2.8.2] `docs/reference/07-sensor-system.md` § Sensor Manifest Schema — マニフェストの項目（`id`、`kind`、`command`、`default_severity`、`fire_on`、`matches`）、blocking が `fire_on: gate` のみで強制されること
 - [2.8.2] `docs/reference/07-sensor-system.md` § How stages import sensors — ステージ側の `sensors:` で結び付け、コンパイル時にグラフへ焼き込まれること
 - [2.8.2] `docs/reference/07-sensor-system.md` § `matches` filter — write 時の対象判定と gate 時の宣言成果物ごとの実行
 - [2.8.2] `core/aidlc-common/stages/inception/units-generation.md` § Step 5: Execute Plan — Generate Unit Artifacts — `yaml` の依存ブロックを `required-sections` センサーがゲートで検査すること
+- [runtime] `first/.claude/CLAUDE.md` § AI-DLC Structure — gate 時のセンサーが advisory か blocking であり、blocking の失敗は明示的に監査される上書きが無ければゲートを開かないこと
 - [runtime] `first/.claude/rules/aidlc.md` — `org.md` / `team.md` / `project.md` / `phases/*.md` の 7 ファイルを `@` インポートしていること
 - [runtime] `first/.claude/sensors/` — 同梱 6 センサーのマニフェストがすべて `default_severity: advisory` で、`claim-sources` / `required-sections` / `upstream-coverage` が `fire_on: gate` であること
 - [record] `first/aidlc/spaces/default/memory/org.md` § Walking Skeleton — org 層の既定の実物
