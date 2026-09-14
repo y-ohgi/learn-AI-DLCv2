@@ -7,7 +7,7 @@
 - **Scope**: docs-book
 - **Start Date**: 2026-09-13T13:01:37Z
 - **State Version**: 8
-- **Active Agent**: aidlc-architect-agent
+- **Active Agent**: aidlc-delivery-agent
 - **Worktree Path**:
 - **Bolt Refs**:
 - **Practices Affirmed Timestamp**: 2026-09-13T14:13:54Z
@@ -28,8 +28,8 @@
 
 ## Execution Plan Summary
 - **Total Stages**: 14
-- **Completed**: 8
-- **In Progress**: units-generation
+- **Completed**: 9
+- **In Progress**: delivery-planning
 
 ## Runtime State
 - **Revision Count**: 3
@@ -67,9 +67,9 @@
 - [ ] user-stories — SKIP
 - [ ] refined-mockups — SKIP
 - [x] domain-design — EXECUTE
-- [-] units-generation — EXECUTE
+- [x] units-generation — EXECUTE
 - [ ] contract-design — SKIP
-- [ ] delivery-planning — EXECUTE
+- [-] delivery-planning — EXECUTE
 
 ### CONSTRUCTION PHASE
 Per unit: [TBD]
@@ -92,12 +92,12 @@ Per unit: [TBD]
 
 ## Current Status
 - **Lifecycle Phase**: INCEPTION
-- **Current Stage**: units-generation
-- **Next Stage**: delivery-planning
+- **Current Stage**: delivery-planning
+- **Next Stage**: functional-design
 - **Status**: Running
-- **Last Updated**: 2026-09-14T01:51:56Z
+- **Last Updated**: 2026-09-14T02:00:06Z
 
 ## Session Resume Point
-- **Last Completed Stage**: domain-design
-- **Next Action**: Execute Units Generation
+- **Last Completed Stage**: units-generation
+- **Next Action**: Execute Delivery Planning
 - **Pending Artifacts**: none

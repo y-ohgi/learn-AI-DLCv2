@@ -2266,3 +2266,68 @@
 **Request Id**: review:a20d7017ac32af7aa436afd3f79022f6
 
 ---
+
+## Review Completed
+**Timestamp**: 2026-09-14T02:00:04Z
+**Event**: REVIEW_COMPLETED
+**Stage**: units-generation
+**Reviewer**: aidlc-architecture-reviewer-agent
+**Iteration**: 1
+**Verdict**: READY
+**Request Fingerprint**: sha256:3221dee11f75ab232b2f6abe7777b2a8393e66e5bf72d38a2281b403377bd53a
+**Artifact Fingerprint**: sha256:3221dee11f75ab232b2f6abe7777b2a8393e66e5bf72d38a2281b403377bd53a
+**Request Id**: review:a20d7017ac32af7aa436afd3f79022f6
+**Review Record**: .aidlc-reviews/units-generation/stage/a36e3fce4741af32/1.json
+**Review Record Digest**: sha256:d6ae3c8f37ad9dc8684936ba6a26e8ac53f41bf033827cd8c36ba8dd93b2c5d5
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-14T02:00:04Z
+**Event**: DECISION_RECORDED
+**Stage**: units-generation
+**Decision**: 学び（learnings）の保存: 候補のうち残すもの、および「次回に向けて追加することはあるか」
+**Options**: c1 FR ID での story-map（記載済み・保存しない）,c2 traceability センサーの US 限定（ケーススタディ素材・保存しない）,c3 Glossary/SourceRegister を U1 に束ねた（保存しない）,Nothing to add,Add a note
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-14T02:00:04Z
+**Event**: QUESTION_ANSWERED
+**Stage**: units-generation
+**Details**: Keep none; Nothing to add
+
+---
+
+## Stage Awaiting Approval
+**Timestamp**: 2026-09-14T02:00:06Z
+**Event**: STAGE_AWAITING_APPROVAL
+**Stage**: units-generation
+
+---
+
+## Gate Approved
+**Timestamp**: 2026-09-14T02:00:06Z
+**Event**: GATE_APPROVED
+**Stage**: units-generation
+**User Input**: Approve
+**Review Finding Dispositions**: {"version":1,"dispositions":[{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md","id":"R-01","fingerprint":"sha256:d47a1a67a605002dae6fb0dc2e664588e4942f1c5ac61b6c9b8a7ea312d7eb42","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md","id":"R-02","fingerprint":"sha256:075bd68e01f08ff54e05f527e3c7e31f99059b5d58b2e91d6502a2e25703e4a8","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md","id":"R-03","fingerprint":"sha256:e50828ae78e19716c36787429c6ed2b4bf7140ed7e5406b18eeed2792ba216a4","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md","id":"R-04","fingerprint":"sha256:26f879130c0ff6154562c9fddc8a0216b0af6116391af00b7596bbbc6d4b85d0","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md","id":"R-05","fingerprint":"sha256:101a96fa3e64cd38a61bd65aad74cceba56748c1b26c32a0dd9b8f3acd3ca54b","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md","id":"R-06","fingerprint":"sha256:5f06231bc02c8da69e5717e7dcdb8e6ac29a92e7661d93f05c652ddcc73b8681","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md","id":"R-07","fingerprint":"sha256:6f70e472fc69a14507fc21cc979ded356a8803fb1cbe321e186853eb64ee677f","status":"Accepted risk"},{"artifact":"aidlc/spaces/default/intents/260913-aidlc-v2-book/inception/units-generation/unit-of-work.md","id":"R-08","fingerprint":"sha256:48a9e9fe73e2ff61c61ef80c03273fb876cdc9b4f5767e167360f77bed23b553","status":"Accepted risk"}]}
+
+---
+
+## Stage Completion
+**Timestamp**: 2026-09-14T02:00:06Z
+**Event**: STAGE_COMPLETED
+**Stage**: units-generation
+**Validation Basis**: {"graphContract":"sha256:baf39a0a351356930786ca985bbb7c5893e8db3e93715525a8e909b629765ee7","inputs":[{"artifact":"components","contentHash":"sha256:ee4709ffe3f953d490edccbb34b80f432542cdc1745e6f981a6929961b1870c2","instanceCount":1,"presentCount":1,"producer":"domain-design","required":true,"structureHash":"sha256:30634bb570c25fbd8e5ef176b4deb907e489111c5dbaaa4b3686c21fe8e56c03"},{"artifact":"decisions","contentHash":"sha256:f90c4020b163e8e85d5530a50c4bb9a53820a815a0f7e415d3e732edc5d49f76","instanceCount":1,"presentCount":1,"producer":"domain-design","required":false,"structureHash":"sha256:408a957f444e74c672e445937ce37533a196ab2a829b85cd8740bc29696c722c"},{"artifact":"requirements","contentHash":"sha256:3cf10d7b43b56302e7ca0bc4082289a6224bbc6bce2dc8f22a269dc447ab12e7","instanceCount":1,"presentCount":1,"producer":"requirements-analysis","required":true,"structureHash":"sha256:57f784bc245237e9f047e55ac3659c6db2357f22448c8e260fc1cb249a5028a9"}],"outputs":[{"artifact":"traceability","contentHash":"sha256:fed7d755eebc08746c9d72e6dde54c62d12786d6eadb5d209478af280a4f483d","instanceCount":1,"presentCount":1,"producer":"units-generation","required":true,"structureHash":"sha256:f25b5635180433443e01fc3941cb4644c63d35fb8f599b0de34d0233aa20f9c3"},{"artifact":"unit-of-work-dependency","contentHash":"sha256:0531a79890168b17140ae1cc1e2a425f7e22d552731ab895f08940b89b3414c4","instanceCount":1,"presentCount":1,"producer":"units-generation","required":true,"structureHash":"sha256:e52b2101d93d5dacfee036d575c9063160d9e4cc1a9c1c5f9a66c1533cc1d318"},{"artifact":"unit-of-work-story-map","contentHash":"sha256:b076705685ec0a94d120bd35b93e4f160739afda16ae17362de027f2bb90dd17","instanceCount":1,"presentCount":1,"producer":"units-generation","required":true,"structureHash":"sha256:abd3aaa9f124b6dec8601ad8c24cd24b79f0f896377580a198dc08dcef263970"},{"artifact":"unit-of-work","contentHash":"sha256:00a8435626fd8abce6135febdcce15497fc0c84e8b322111b42b6a14a5ef70fb","instanceCount":1,"presentCount":1,"producer":"units-generation","required":true,"structureHash":"sha256:03788b4ce282b8b4c1342f9281369c864096ba9ff7c580c468f0fe212ad61985"}],"projectType":"greenfield","schema":3}
+**Details**: Stage Units Generation approved by gate
+
+---
+
+## Stage Start
+**Timestamp**: 2026-09-14T02:00:06Z
+**Event**: STAGE_STARTED
+**Stage**: delivery-planning
+**Agent**: aidlc-delivery-agent
+
+---
